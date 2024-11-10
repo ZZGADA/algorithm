@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="算法阶段学习" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ZZGADA&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ZZGADA/algorithm.git&quot;,
+    &quot;accountId&quot;: &quot;de33506f-2cf3-49b1-ba39-bb19626cff37&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar:///Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Integer.java" root0="SKIP_INSPECTION" />
+    <setting file="jar:///Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Deque.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2lM4bZPVm5WP14vk5Y8R4qRV0ah" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Day0914.executor": "Run",
+    "Application.Day0917.executor": "Run",
+    "Application.Dec12.executor": "Run",
+    "Application.Dec14.executor": "Run",
+    "Application.Dec21.executor": "Run",
+    "Application.Dec28.executor": "Debug",
+    "Application.Dec8.executor": "Run",
+    "Application.DiDI.executor": "Run",
+    "Application.Grammar.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.Matrix.executor": "Debug",
+    "Application.MeiTuan.executor": "Run",
+    "Application.MinHighTree (1).executor": "Run",
+    "Application.MinHighTree.executor": "Run",
+    "Application.MinMax.executor": "Run",
+    "Application.Nov2.executor": "Run",
+    "Application.Nov8.executor": "Debug",
+    "Application.Oct11.executor": "Debug",
+    "Application.Oct13.executor": "Run",
+    "Application.Oct21.executor": "Run",
+    "Application.Pdd.executor": "Run",
+    "Application.StringEncoding.executor": "Run",
+    "Application.WangYI.executor": "Run",
+    "Application.WangYi2.executor": "Run",
+    "Application.XiaoMi.executor": "Run",
+    "Application.Xiaomi.executor": "Run",
+    "Application.ZhaoYing.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "configurable.group.editor",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.algorithm_3" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="Application" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Nov8">
+    <configuration name="Dec21" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_8.Dec21" />
+      <module name="algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.algorithm_8.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Dec28" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_8.Dec28" />
+      <module name="algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.algorithm_8.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Nov2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_9.Nov2" />
+      <module name="algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.algorithm_9.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Nov8" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_9.Nov8" />
+      <module name="algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.algorithm_9.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Nov8" />
+        <item itemvalue="Application.Nov2" />
+        <item itemvalue="Application.Dec28" />
+        <item itemvalue="Application.Dec21" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.387" />
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-IU-242.20224.387" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="" />
+      <created>1724976685088</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1724976685088</updated>
+      <workItem from="1724976686432" duration="12436000" />
+      <workItem from="1725068543483" duration="12136000" />
+      <workItem from="1725107941699" duration="2999000" />
+      <workItem from="1725157896022" duration="16730000" />
+      <workItem from="1725321662105" duration="5274000" />
+      <workItem from="1725349094608" duration="8936000" />
+      <workItem from="1725413680425" duration="152000" />
+      <workItem from="1725496716775" duration="7477000" />
+      <workItem from="1725522715205" duration="6561000" />
+      <workItem from="1725581213541" duration="4645000" />
+      <workItem from="1725694635168" duration="19178000" />
+      <workItem from="1725840283535" duration="4455000" />
+      <workItem from="1725892181456" duration="2795000" />
+      <workItem from="1726013756024" duration="4609000" />
+      <workItem from="1726103770248" duration="670000" />
+      <workItem from="1726111084302" duration="12000" />
+      <workItem from="1726214819900" duration="11000" />
+      <workItem from="1726272717343" duration="2306000" />
+      <workItem from="1726293974544" duration="1201000" />
+      <workItem from="1726577870485" duration="7053000" />
+      <workItem from="1726617783055" duration="5333000" />
+      <workItem from="1726704776053" duration="2987000" />
+      <workItem from="1726739301334" duration="7482000" />
+      <workItem from="1726890751947" duration="1366000" />
+      <workItem from="1726922754377" duration="1765000" />
+      <workItem from="1726970198583" duration="14557000" />
+      <workItem from="1727095863599" duration="6169000" />
+      <workItem from="1727309160950" duration="10739000" />
+      <workItem from="1727397139317" duration="5581000" />
+      <workItem from="1727412926188" duration="1411000" />
+      <workItem from="1727481576528" duration="23700000" />
+      <workItem from="1727588442322" duration="3675000" />
+      <workItem from="1727655244014" duration="2590000" />
+      <workItem from="1728090182094" duration="5044000" />
+      <workItem from="1728120595251" duration="254000" />
+      <workItem from="1728175696023" duration="2136000" />
+      <workItem from="1728264792107" duration="812000" />
+      <workItem from="1728265662248" duration="618000" />
+      <workItem from="1728345558377" duration="3839000" />
+      <workItem from="1728433771357" duration="2232000" />
+      <workItem from="1728449131781" duration="21000" />
+      <workItem from="1728520007191" duration="3138000" />
+      <workItem from="1728605244950" duration="5820000" />
+      <workItem from="1728690729803" duration="9943000" />
+      <workItem from="1728711893837" duration="1753000" />
+      <workItem from="1728783977017" duration="12990000" />
+      <workItem from="1728866763456" duration="819000" />
+      <workItem from="1728918257742" duration="3069000" />
+      <workItem from="1728951376638" duration="3690000" />
+      <workItem from="1728971868510" duration="861000" />
+      <workItem from="1728981901651" duration="3163000" />
+      <workItem from="1729300347532" duration="4596000" />
+      <workItem from="1729468263955" duration="4234000" />
+      <workItem from="1729557088008" duration="3598000" />
+      <workItem from="1729643264316" duration="3377000" />
+      <workItem from="1730074852896" duration="2566000" />
+      <workItem from="1730083118643" duration="378000" />
+      <workItem from="1730158865797" duration="8753000" />
+      <workItem from="1730213158810" duration="3251000" />
+      <workItem from="1730339185791" duration="1288000" />
+      <workItem from="1730423182754" duration="2402000" />
+      <workItem from="1730548518166" duration="6679000" />
+      <workItem from="1730598952866" duration="6161000" />
+      <workItem from="1730634304497" duration="3887000" />
+      <workItem from="1730679786956" duration="2015000" />
+      <workItem from="1730776376234" duration="6000" />
+      <workItem from="1731024649584" duration="4653000" />
+      <workItem from="1731119184127" duration="78000" />
+      <workItem from="1731200223142" duration="2955000" />
+      <workItem from="1731222252170" duration="859000" />
+    </task>
+    <task id="LOCAL-00001" summary="算法阶段学习">
+      <option name="closed" value="true" />
+      <created>1728701714783</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1728701714783</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="算法阶段学习" />
+    <option name="LAST_COMMIT_MESSAGE" value="算法阶段学习" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_2/XiaoMi.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_2/XiaoMi.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_2/XiaoMi.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_2/Matrix.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_7/Dec8.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_7/Oct11.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_7/Oct13.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_7/DiDI.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_8/Dec21.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_8/Dec21.java</url>
+          <line>105</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_8/Dec21.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_8/Dec28.java</url>
+          <line>140</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_8/Dec28.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_9/Nov2.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_9/Nov2.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
