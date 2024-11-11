@@ -666,79 +666,104 @@ class Solution {
 10. 数位成本和为目标值的最大数字 [完全背包+字符串处理](https://leetcode.cn/problems/form-largest-integer-with-digits-that-add-up-to-target/)    
     今天做了个hard 感觉还行，dp+字符串，不是最优写法但是也通过了   
 ```java
+class Solution {
+   public String largestNumber(int[] cost, int target) {
+      // 数位是i+1 成本是cost[i]
+      // dp[i] 记录符合规则的 成本为i的最大整数
+      int length = cost.length;
+      StringBuilder[] dp = new StringBuilder[target + 1];
+      for (int i = 0; i <= target; i++) {
+         dp[i] = new StringBuilder();
+      }
+
+      for (int i = 0; i < length; i++) {
+         String s = String.valueOf(i + 1);
+         if (s.contains("0")) {
+            continue;
+         }
+
+         // 数字要最大 (还需要重排序 因为第一个插入的元素无法满足目标值为最大)
+         for (int j = cost[i]; j <= target; j++) {
+             // 完全背包 找到可行解
+            if (dp[j - cost[i]].length() != 0 || j - cost[i] == 0) {
+
+               // 加入贪心 位数是逐渐递加的 那么位数如果要加入就一定是放在开头 这样就能维持最大数
+               dp[j - cost[i]].insert(0,i+1);
+               // 找到子集的最优解 
+               if (ifCurrentLargeThenOriginal(dp[j], dp[j - cost[i]])) {
+                  // 如果数字更大
+                  dp[j] = new StringBuilder(dp[j - cost[i]]);
+               }
+               dp[j - cost[i]].deleteCharAt(0);
+            }
+
+         }
+      }
+
+      return dp[target].length() == 0 ? "0": dp[target].toString();
+
+   }
+    
+   // 比较大小 维持dp[i] 表示最大数
+   public boolean ifCurrentLargeThenOriginal(StringBuilder original, StringBuilder current) {
+      int lenOriginal = original.length();
+      int lenCurrent = current.length();
+      if (lenCurrent > lenOriginal) {
+         return true;
+      } else if (lenCurrent < lenOriginal) {
+         return false;
+      } else {
+         // 两个长度相等
+         for (int i = 0; i < lenCurrent; i++) {
+            if (current.charAt(i) > original.charAt(i)) {
+               return true;
+            } else if (current.charAt(i) < original.charAt(i)) {
+               return false;
+            }
+         }
+      }
+      return false;
+
+   }
+}
+```
+
+ok 现在来看标准解法。但是说实话，我写不出来。用贪心反推，我想不到。  
+思路：
+1. 用dp求满足target的数的最大长度
+2. 从大到小遍历“位数”，并反推dp 从而找到具体的位数是多少。（贪心）
+妙，太妙了
+
+```java
 
 class Solution {
-    public String largestNumber(int[] cost, int target) {
-        // 数位是i+1 成本是cost[i]
-        // dp[i] 记录符合规则的 成本为i的最大整数
-        int length = cost.length;
-        StringBuilder[] dp = new StringBuilder[target + 1];
-        for (int i = 0; i <= target; i++) {
-            dp[i] = new StringBuilder();
-        }
-
-        for (int i = 0; i < length; i++) {
-            String s = String.valueOf(i + 1);
-            if (s.contains("0")) {
-                continue;
-            }
-
-            // 数字要最大 (还需要重排序 因为第一个插入的元素无法满足目标值为最大)
-            for (int j = cost[i]; j <= target; j++) {
-                if (dp[j - cost[i]].length() != 0 || j - cost[i] == 0) {
-                    
-                    int inserIndex = insertNum(dp[j-cost[i]],i+1);
-                    if (ifCurrentLargeThenOriginal(dp[j], dp[j - cost[i]])) {
-                        // 如果数字更大
-                        dp[j] = new StringBuilder(dp[j - cost[i]]);
-                    }
-                    dp[j - cost[i]].deleteCharAt(inserIndex);
-                }
-
+    public String largestNumber(int[] cost, int t) {
+        int[] f = new int[t + 1];
+        Arrays.fill(f, Integer.MIN_VALUE);
+        f[0] = 0;
+        // 第一个dp 求最大整数的最大长度 （此时最大整数并没有求出来 只知道长度）
+        for (int i = 1; i <= 9; i++) {
+            int u = cost[i - 1];
+            for (int j = u; j <= t; j++) {
+                f[j] = Math.max(f[j], f[j - u] + 1);
             }
         }
+        if (f[t] < 0) return "0";
+        String ans = "";
 
-        return dp[target].length() == 0 ? "0": dp[target].toString();
-
-    }
-
-    public int insertNum(StringBuilder builder,int num){
-        int count = 0;
-        int end = builder.length();
-        if(builder.length()==0){
-            builder.append(num);
-            return count;
-        }
-
-        for (int i = 0; i < end; i++) {
-            if (num >= builder.charAt(i) - '0') {
-                builder.insert(i, num);
-                return i;
+        // 贪心求最大整数 
+        // j表示剩余值 u为花费 
+        for (int i = 9, j = t; i >= 1; i--) {
+            int u = cost[i - 1];
+            // 状态转移的反推 
+            // f[j] 是 f[j-u]+1 推出来的
+            // 同时从大到小遍历 保证数字一直是最大的 
+            while (j >= u && f[j] == f[j - u] + 1) {
+                ans += String.valueOf(i);
+                j -= u;
             }
         }
-
-        return end;
-    }
-
-    public boolean ifCurrentLargeThenOriginal(StringBuilder original, StringBuilder current) {
-        int lenOriginal = original.length();
-        int lenCurrent = current.length();
-        if (lenCurrent > lenOriginal) {
-            return true;
-        } else if (lenCurrent < lenOriginal) {
-            return false;
-        } else {
-            // 两个长度相等
-            for (int i = 0; i < lenCurrent; i++) {
-                if (current.charAt(i) > original.charAt(i)) {
-                    return true;
-                } else if (current.charAt(i) < original.charAt(i)) {
-                    return false;
-                }
-            }
-        }
-        return false;
-
+        return ans;
     }
 }
 ```
