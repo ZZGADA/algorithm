@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="算法阶段学习" />
+    <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="add git ignore">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -272,7 +276,8 @@
       <workItem from="1731024649584" duration="4653000" />
       <workItem from="1731119184127" duration="78000" />
       <workItem from="1731200223142" duration="2955000" />
-      <workItem from="1731222252170" duration="859000" />
+      <workItem from="1731222252170" duration="2872000" />
+      <workItem from="1731285534135" duration="4778000" />
     </task>
     <task id="LOCAL-00001" summary="算法阶段学习">
       <option name="closed" value="true" />
@@ -282,7 +287,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728701714783</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add git ignore">
+      <option name="closed" value="true" />
+      <created>1731224342141</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731224342141</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,7 +326,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="算法阶段学习" />
-    <option name="LAST_COMMIT_MESSAGE" value="算法阶段学习" />
+    <MESSAGE value="add git ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="add git ignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -392,6 +406,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_9/Nov2.java</url>
           <line>47</line>
           <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_9/Nov8.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_9/Nov8.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -663,6 +663,87 @@ class Solution {
 ```
 
 
+10. 数位成本和为目标值的最大数字 [完全背包+字符串处理](https://leetcode.cn/problems/form-largest-integer-with-digits-that-add-up-to-target/)    
+    今天做了个hard 感觉还行，dp+字符串，不是最优写法但是也通过了   
+```java
+
+class Solution {
+    public String largestNumber(int[] cost, int target) {
+        // 数位是i+1 成本是cost[i]
+        // dp[i] 记录符合规则的 成本为i的最大整数
+        int length = cost.length;
+        StringBuilder[] dp = new StringBuilder[target + 1];
+        for (int i = 0; i <= target; i++) {
+            dp[i] = new StringBuilder();
+        }
+
+        for (int i = 0; i < length; i++) {
+            String s = String.valueOf(i + 1);
+            if (s.contains("0")) {
+                continue;
+            }
+
+            // 数字要最大 (还需要重排序 因为第一个插入的元素无法满足目标值为最大)
+            for (int j = cost[i]; j <= target; j++) {
+                if (dp[j - cost[i]].length() != 0 || j - cost[i] == 0) {
+                    
+                    int inserIndex = insertNum(dp[j-cost[i]],i+1);
+                    if (ifCurrentLargeThenOriginal(dp[j], dp[j - cost[i]])) {
+                        // 如果数字更大
+                        dp[j] = new StringBuilder(dp[j - cost[i]]);
+                    }
+                    dp[j - cost[i]].deleteCharAt(inserIndex);
+                }
+
+            }
+        }
+
+        return dp[target].length() == 0 ? "0": dp[target].toString();
+
+    }
+
+    public int insertNum(StringBuilder builder,int num){
+        int count = 0;
+        int end = builder.length();
+        if(builder.length()==0){
+            builder.append(num);
+            return count;
+        }
+
+        for (int i = 0; i < end; i++) {
+            if (num >= builder.charAt(i) - '0') {
+                builder.insert(i, num);
+                return i;
+            }
+        }
+
+        return end;
+    }
+
+    public boolean ifCurrentLargeThenOriginal(StringBuilder original, StringBuilder current) {
+        int lenOriginal = original.length();
+        int lenCurrent = current.length();
+        if (lenCurrent > lenOriginal) {
+            return true;
+        } else if (lenCurrent < lenOriginal) {
+            return false;
+        } else {
+            // 两个长度相等
+            for (int i = 0; i < lenCurrent; i++) {
+                if (current.charAt(i) > original.charAt(i)) {
+                    return true;
+                } else if (current.charAt(i) < original.charAt(i)) {
+                    return false;
+                }
+            }
+        }
+        return false;
+
+    }
+}
+```
+
+
 ### 记忆化搜索 
 
 
