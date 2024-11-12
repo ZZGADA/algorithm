@@ -768,6 +768,32 @@ class Solution {
 }
 ```
 
+11. 最长公共子序列 [最长公共子序列](https://leetcode.cn/problems/longest-common-subsequence/solutions/696763/zui-chang-gong-gong-zi-xu-lie-by-leetcod-y7u0/)
+```java
+class Solution {
+    public int longestCommonSubsequence(String text1, String text2) {
+        char[] s = text1.toCharArray();
+        char[] t = text2.toCharArray();
+        int n = s.length;
+        int m = t.length;
+        int[][] f = new int[n + 1][m + 1];
+
+        // 遍历所有text1[i]，text2[j]结尾的可能
+        // 考虑前i+1，j+1的元素 i+1 只是为了移位
+        // dp [i][j] 表示考虑前i，j个元素所能维护的最长自序列
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                f[i + 1][j + 1] = s[i] == t[j] ? f[i][j] + 1 :
+                                  Math.max(f[i][j + 1], f[i + 1][j]);
+            }
+        }
+        return f[n][m];
+    }
+}
+
+```
+
+
 
 ### 记忆化搜索 
 
@@ -1162,6 +1188,53 @@ class Solution {
         // 每个元素都有两种可能
         dfs(index+1,record + nums[index]);
         dfs(index+1,record - nums[index]);
+    }
+}
+```
+
+
+5. 最长公共子序列 [记忆化搜索递归 ](https://leetcode.cn/problems/longest-common-subsequence/description/)
+这题可以翻译成dp
+
+```java
+class Solution {
+    private char[]s,t;
+    private int[][] memo;
+
+
+    public int longestCommonSubsequence(String text1, String text2) {
+        s=text1.toCharArray();
+        t=text2.toCharArray();
+        int n = s.length;
+        int m = t.length;
+
+        // nm结尾的最长公共子序列
+        memo = new int[n][m];
+
+        for(int[] row : memo){
+            Arrays.fill(row,-1);    // -1 表示没有计算过
+        }
+
+        return dfs(n-1,m-1);
+    }
+
+    private int dfs(int i ,int j){
+        if(i<0 || j<0){
+            return 0;
+        }
+
+        if (memo[i][j] != -1) {
+            return memo[i][j]; // 之前计算过
+        }
+        
+        // 找到重复元素的结尾
+        if (s[i] == t[j]) {
+            return memo[i][j] = dfs(i - 1, j - 1) + 1;
+        }
+
+        // s 和 t 各自移动
+        // 找到自己最长的公共子序列长度
+        return memo[i][j] = Math.max(dfs(i-1,j),dfs(i,j-1));
     }
 }
 ```
