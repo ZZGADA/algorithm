@@ -794,6 +794,36 @@ class Solution {
 ```
 
 
+12. 两个字符串的删除操作 [两个字符串的删除操作](https://leetcode.cn/problems/delete-operation-for-two-strings/)
+一定注意状态转移 和 dp[i][j] 表示的具体含义
+```java
+
+class Solution {
+    public int minDistance(String word1, String word2) {
+        char[] s = word1.toCharArray();
+        char[] t = word2.toCharArray();
+        int lens = s.length;
+        int lent = t.length;
+
+        // dp[j][j] 考虑前i 和 j个元素 的最长子序列长度
+        int[][] dp = new int[lens+1][lent+1];
+        for (int i = 1; i <= lens; i++) {
+            for (int j = 1; j <= lent; j++) {
+                if(s[i-1] == t[j-1]){
+                    // 如果两个元素相等 
+                    // 从各自的前i-1 和 j-1 的考虑范围转移 
+                    dp[i][j] = Math.max(dp[i][j],dp[i-1][j-1]+1);
+                }else{
+                    dp[i][j] = Math.max(dp[i-1][j],dp[i][j-1]);
+                }
+            }
+        }
+        return lens+lent - 2*dp[lens][lent];
+    }
+}
+```
+
+
 
 ### 记忆化搜索 
 
@@ -1237,6 +1267,56 @@ class Solution {
         return memo[i][j] = Math.max(dfs(i-1,j),dfs(i,j-1));
     }
 }
+```
+
+6. 编辑距离 [编辑距离](https://leetcode.cn/problems/edit-distance/)
+```java
+class Solution {
+    int[][] memory;
+    public int minDistance(String word1, String word2) {
+        int m = word1.length();
+        int n = word2.length();
+        memory = new int[m + 1][n + 1];
+        return dfs(m,n,word1,word2);
+    }
+
+    // 从后往前 考虑前m 和 n个元素
+    // dfs的定义：让word1前m个元素 和 word2 前n个元素相同要做的最小操作数
+    public int dfs(int m,int n,String word1,String word2){
+        // 结束状态 剩余没有处理的元素 
+        if(m == 0){
+            return n;
+        }
+        if(n == 0){
+            return m;
+        }
+        
+        // 考虑前word1前m 个元素 和 word2 前n个元素 使其相等需要的最小操作数
+        if(memory[m][n] != 0){
+            return memory[m][n];
+        }
+
+
+        if(word1.charAt(m - 1) == word2.charAt(n - 1)){
+            // 向前找 进入下一个递归状态 
+            memory[m][n] =  dfs(m - 1,n - 1,word1,word2);
+
+        }else {
+            // 插入 修改 删除 然后操作数+1
+            memory[m][n] = Math.min(
+                Math.min(
+                    // 删除 考虑前m-1元素
+                    dfs(m - 1,n,word1,word2),
+                    // 插入 插入元素m不变 依然考虑考虑前m个元素 但是新增元素和word2的结尾元素相等 所以考虑前n-1个元素
+                    dfs(m,n - 1,word1,word2)),
+                
+                // 修改
+                dfs(m - 1,n - 1,word1,word2)) + 1;
+        }
+        return memory[m][n];
+    }
+}
+
 ```
 
 

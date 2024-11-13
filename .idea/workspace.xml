@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="add git ignore">
+    <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="编辑距离">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -277,7 +277,9 @@
       <workItem from="1731200223142" duration="2955000" />
       <workItem from="1731222252170" duration="2872000" />
       <workItem from="1731285534135" duration="5003000" />
-      <workItem from="1731337340743" duration="323000" />
+      <workItem from="1731337340743" duration="907000" />
+      <workItem from="1731370519204" duration="2990000" />
+      <workItem from="1731458433584" duration="2364000" />
     </task>
     <task id="LOCAL-00001" summary="算法阶段学习">
       <option name="closed" value="true" />
@@ -295,7 +297,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731224342141</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="最长公共子序列">
+      <option name="closed" value="true" />
+      <created>1731376587242</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731376587242</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,7 +337,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="算法阶段学习" />
     <MESSAGE value="add git ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="add git ignore" />
+    <MESSAGE value="最长公共子序列" />
+    <option name="LAST_COMMIT_MESSAGE" value="最长公共子序列" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -409,12 +420,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_9/Nov8.java</url>
-          <line>42</line>
+          <line>36</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_9/Nov8.java</url>
-          <line>61</line>
+          <line>55</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
