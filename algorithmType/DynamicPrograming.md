@@ -518,7 +518,7 @@ class Solution {
                 if(s[i-1] == t[j-1]){
                     // 如果两个元素相等 
                     // 从各自的前i-1 和 j-1 的考虑范围转移 
-                    dp[i][j] = Math.max(dp[i][j],dp[i-1][j-1]+1);
+                    dp[i][j] = dp[i-1][j-1]+1;
                 }else{
                     dp[i][j] = Math.max(dp[i-1][j],dp[i][j-1]);
                 }
