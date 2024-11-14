@@ -5,6 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="编辑距离">
+      <change afterPath="$PROJECT_DIR$/algorithmType/BFS.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithmType/BinarySearch.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithmType/DFS.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithmType/DynamicPrograming.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithmType/Greedy.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithmType/List.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithmType/MemorySearch.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithmType/MonotonicStacks.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithmType/PrefixSum.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithmType/Sort.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithmType/Window.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -280,6 +291,7 @@
       <workItem from="1731337340743" duration="907000" />
       <workItem from="1731370519204" duration="2990000" />
       <workItem from="1731458433584" duration="2364000" />
+      <workItem from="1731542282432" duration="3292000" />
     </task>
     <task id="LOCAL-00001" summary="算法阶段学习">
       <option name="closed" value="true" />
