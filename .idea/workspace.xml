@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="编辑距离">
-      <change beforePath="$PROJECT_DIR$/algorithmType/DynamicPrograming.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/DynamicPrograming.md" afterDir="false" />
+    <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="新排版">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithmType/BinarySearch.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/BinarySearch.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,50 +55,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Day0914.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Day0917.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Dec12.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Dec14.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Dec21.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Dec28.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.Dec8.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DiDI.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Grammar.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Matrix.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.MeiTuan.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MinHighTree (1).executor&quot;: &quot;Run&quot;,
-    &quot;Application.MinHighTree.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MinMax.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Nov2.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Nov8.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.Oct11.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.Oct13.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Oct21.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Pdd.executor&quot;: &quot;Run&quot;,
-    &quot;Application.StringEncoding.executor&quot;: &quot;Run&quot;,
-    &quot;Application.WangYI.executor&quot;: &quot;Run&quot;,
-    &quot;Application.WangYi2.executor&quot;: &quot;Run&quot;,
-    &quot;Application.XiaoMi.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Xiaomi.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ZhaoYing.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Day0914.executor": "Run",
+    "Application.Day0917.executor": "Run",
+    "Application.Dec12.executor": "Run",
+    "Application.Dec14.executor": "Run",
+    "Application.Dec21.executor": "Run",
+    "Application.Dec28.executor": "Debug",
+    "Application.Dec8.executor": "Run",
+    "Application.DiDI.executor": "Run",
+    "Application.Grammar.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.Matrix.executor": "Debug",
+    "Application.MeiTuan.executor": "Run",
+    "Application.MinHighTree (1).executor": "Run",
+    "Application.MinHighTree.executor": "Run",
+    "Application.MinMax.executor": "Run",
+    "Application.Nov2.executor": "Run",
+    "Application.Nov25.executor": "Debug",
+    "Application.Nov8.executor": "Debug",
+    "Application.Oct11.executor": "Debug",
+    "Application.Oct13.executor": "Run",
+    "Application.Oct21.executor": "Run",
+    "Application.Pdd.executor": "Run",
+    "Application.StringEncoding.executor": "Run",
+    "Application.WangYI.executor": "Run",
+    "Application.WangYi2.executor": "Run",
+    "Application.XiaoMi.executor": "Run",
+    "Application.Xiaomi.executor": "Run",
+    "Application.ZhaoYing.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "configurable.group.editor",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
@@ -113,7 +115,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Nov8">
+  <component name="RunManager" selected="Application.Nov25">
     <configuration name="Dec21" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.algorithm_8.Dec21" />
       <module name="algorithm" />
@@ -140,12 +142,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+    <configuration name="Nov2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_9.Nov2" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.algorithm_9.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -153,12 +155,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Nov2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_9.Nov2" />
+    <configuration name="Nov25" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_10.Nov25" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.algorithm_9.*" />
+          <option name="PATTERN" value="org.example.algorithm_10.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -181,11 +183,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Nov25" />
         <item itemvalue="Application.Nov8" />
         <item itemvalue="Application.Nov2" />
         <item itemvalue="Application.Dec28" />
         <item itemvalue="Application.Dec21" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -279,7 +281,10 @@
       <workItem from="1731337340743" duration="907000" />
       <workItem from="1731370519204" duration="2990000" />
       <workItem from="1731458433584" duration="2364000" />
-      <workItem from="1731542282432" duration="3652000" />
+      <workItem from="1731542282432" duration="4011000" />
+      <workItem from="1732494118630" duration="1557000" />
+      <workItem from="1732518041147" duration="12000" />
+      <workItem from="1732582160390" duration="1109000" />
     </task>
     <task id="LOCAL-00001" summary="算法阶段学习">
       <option name="closed" value="true" />
@@ -305,7 +310,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731376587242</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="新排版">
+      <option name="closed" value="true" />
+      <created>1731547956895</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1731547956895</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,7 +351,8 @@
     <MESSAGE value="算法阶段学习" />
     <MESSAGE value="add git ignore" />
     <MESSAGE value="最长公共子序列" />
-    <option name="LAST_COMMIT_MESSAGE" value="最长公共子序列" />
+    <MESSAGE value="新排版" />
+    <option name="LAST_COMMIT_MESSAGE" value="新排版" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -427,6 +441,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_9/Nov8.java</url>
           <line>55</line>
           <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_10/Nov25.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

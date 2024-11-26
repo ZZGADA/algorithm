@@ -184,3 +184,81 @@ class Solution {
     }
 }
 ```
+
+5. 寻找峰值元素 [寻找峰值元素](https://leetcode.cn/problems/find-peak-element/?envType=problem-list-v2&envId=binary-search)
+```java
+
+class Solution {
+    public int findPeakElement(int[] nums) {
+        // 一定出现一个峰值 则一定存在单调区间 那么根据单调性进行判断
+        // 判断元素是否是峰值元素是判断 元素是否都大于左右两边 
+        int length = nums.length;
+        int left = 0;
+        int right = length-1;
+        while (left < right) {
+            int mid = (right-left)/2 + left;
+            if(mid == left){
+                // 如果只剩下两个数了 选大的那一个
+                return nums[left]>nums[right]?left:right;
+            }
+
+            if(nums[mid] > nums[mid-1]){
+                // 现在在单调增区间
+                if(mid+1<length && nums[mid] > nums[mid+1]){
+                    // 找到峰值
+                    return mid;
+                }else{
+                    left = mid+1;
+                }
+            }else{
+                // mid 元素 小于 左边的元素 峰值在左边
+                // 在递减区间
+                right = mid;
+            }
+        }
+
+        return left;
+    }
+}
+```
+
+6. 两数之和-输入有序数组 [两数之和-输入有序数组](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/description/?envType=problem-list-v2&envId=binary-search)
+```java
+class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+        // 非递减顺序排列 ---> 增序列 && 有相同元素
+        // 注意下标元素从1 开始
+        int[] res = new int[2];
+        int length = numbers.length;
+
+        for (int i = 0; i < length; i++) {
+            if (numbers[i]<0 ||numbers[i] <= target) {
+                int left = i + 1;
+                int right = length - 1;
+                int addTarget = target - numbers[i];
+
+                // 向后寻找符合目标值的元素
+                while (left < right) {
+                    int mid = (right - left) / 2 + left;
+                    if (numbers[mid] >= addTarget) {
+                        right = mid;
+                    }else{
+                        left = mid+1;
+                    }
+                }
+
+                if(numbers[right] == addTarget){
+                    res[0] = i+1;
+                    res[1] = right+1;
+                    break;
+                }
+            }else{
+                break;
+            }
+
+        }
+
+        return res;
+    }
+}
+```
