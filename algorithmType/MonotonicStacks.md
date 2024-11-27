@@ -101,7 +101,10 @@ class Solution {
 3. 移除K位数字 [移除K位数字](https://leetcode.cn/problems/remove-k-digits/description/?envType=problem-list-v2&envId=monotonic-stack)
 关于这题，我没有写出来。因为涉及到了贪心，确实不会。       
 目标🎯：将一个字符串数组移除k位之后，使得字符串数字最小。   
-方法：让字符串数字呈现单调不减性。使用单调栈，删除让处于高位的递增元素。   
+方法：
+   1. 让字符串数字呈现单调不减性。使用单调栈，删除让处于高位的递增元素。
+   2. 存在nums字符串，如果nums[i]<nums[i-1] 删除前nums[i-1]。从而保证nums元素呈现单调不减性。
+   3. 如果最后删除的元素m<需要删除的元素k，那么就删除「处理后的nums字符串」后的k-m个元素
 特别注意⚠️：要对前置0做处理。
 ```java
 class Solution {
