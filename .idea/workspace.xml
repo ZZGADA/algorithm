@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="新排版">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithmType/BinarySearch.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/BinarySearch.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithmType/MonotonicStacks.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/MonotonicStacks.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +73,7 @@
     "Application.MinHighTree.executor": "Run",
     "Application.MinMax.executor": "Run",
     "Application.Nov2.executor": "Run",
-    "Application.Nov25.executor": "Debug",
+    "Application.Nov25.executor": "Run",
     "Application.Nov8.executor": "Debug",
     "Application.Oct11.executor": "Debug",
     "Application.Oct13.executor": "Run",
@@ -284,7 +284,8 @@
       <workItem from="1731542282432" duration="4011000" />
       <workItem from="1732494118630" duration="1557000" />
       <workItem from="1732518041147" duration="12000" />
-      <workItem from="1732582160390" duration="1109000" />
+      <workItem from="1732582160390" duration="1199000" />
+      <workItem from="1732669099071" duration="2752000" />
     </task>
     <task id="LOCAL-00001" summary="算法阶段学习">
       <option name="closed" value="true" />
@@ -444,8 +445,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_10/Nov25.java</url>
-          <line>22</line>
+          <line>89</line>
           <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_10/Nov25.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

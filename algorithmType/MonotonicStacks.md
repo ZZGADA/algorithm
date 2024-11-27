@@ -98,3 +98,45 @@ class Solution {
 }
 ```
 
+3. 移除K位数字 [移除K位数字](https://leetcode.cn/problems/remove-k-digits/description/?envType=problem-list-v2&envId=monotonic-stack)
+关于这题，我没有写出来。因为涉及到了贪心，确实不会。       
+目标🎯：将一个字符串数组移除k位之后，使得字符串数字最小。   
+方法：让字符串数字呈现单调不减性。使用单调栈，删除让处于高位的递增元素。   
+特别注意⚠️：要对前置0做处理。
+```java
+class Solution {
+    public String removeKdigits(String num, int k) {
+        Deque<Character> deque = new LinkedList<Character>();
+        int length = num.length();
+        for (int i = 0; i < length; ++i) {
+            char digit = num.charAt(i);
+            // 让新序列维持单调不减性
+            while (!deque.isEmpty() && k > 0 && deque.peekLast() > digit) {
+                deque.pollLast();
+                k--;
+            }
+            deque.offerLast(digit);
+        }
+
+        // 此时k大于0 还有元素没有删完 需要从末尾的元素删除掉
+        for(int i = 0;i<k;i++){
+            deque.pollLast();
+        }
+
+        StringBuilder ret = new StringBuilder();
+        boolean leadingZero = true;
+        while(!deque.isEmpty()){
+            // 去除前置0 
+            char digit = deque.pollFirst();
+            if(leadingZero && digit == '0'){
+                continue;
+            }
+            leadingZero = false;
+            ret.append(digit);
+        }
+
+        return ret.length() == 0 ? "0" : ret.toString();
+    }
+}
+```
+
