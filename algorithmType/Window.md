@@ -136,6 +136,8 @@ class Solution {
 }
 ```
 
+
+--- 
 4. 至少有k个重复字符的最长子串 [至少有k个重复字符的最长子串](https://leetcode.cn/problems/longest-substring-with-at-least-k-repeating-characters/description/)
     1. [题解](https://leetcode.cn/problems/longest-substring-with-at-least-k-repeating-characters/solutions/624045/xiang-jie-mei-ju-shuang-zhi-zhen-jie-fa-50ri1/)
     2. 题目说明了只包含小写字母（26 个，为有限数据），我们可以枚举最大长度所包含的字符类型数量，答案必然是 [1, 26]，即最少包含 1 个字母，最多包含 26 个字母。  
@@ -183,6 +185,8 @@ class Solution {
     }
 }
 ```
+
+--- 
 5. 2进制数组全部等于1 的最小操作 ==> 限定来窗口大小为3  [滑窗+贪心](https://leetcode.cn/problems/minimum-operations-to-make-binary-array-elements-equal-to-one-i/?envType=daily-question&envId=2024-10-18)
 
 ```java
@@ -233,8 +237,48 @@ class Solution {
 }
 ```
 
-
-
-
 ---
 
+6. 无重复字符的最长字串 [滑窗O(n)](https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/?envType=study-plan-v2&envId=top-100-liked)
+```java
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+       int length = s.length();
+        if (length == 0) {
+            return 0;
+        }
+
+        if (length == 1) {
+            return 1;
+        }
+
+        // characterMap 存放已出现字符在s中的下标
+        // sArray 是 s转 array
+        int[] characterMap = new int[256];
+        Arrays.fill(characterMap, -1);
+        char[] sArray = s.toCharArray();
+        int res = 1;
+        int left = 0, right = 1;
+        characterMap[sArray[left]] = left; // 将第一个元素的下标标记
+
+        while (left < right && right < length) {
+            if (characterMap[sArray[right]] == -1) {
+                // 右指针遍历的时候 map中没有标记 那么就放行
+                res = Math.max(res, right - left + 1);
+            } else {
+                // 如果已经标记了
+                int flag = characterMap[sArray[right]];
+                for (int i = left; i <= characterMap[sArray[right]]; i++) {
+                    characterMap[sArray[i]] = -1;
+                }
+                left = flag + 1;
+            }
+            characterMap[sArray[right]] = right;
+            right++;
+        }
+        return res;
+    }
+}
+
+
+```

@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="新排版" />
+    <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="新排版">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,6 +56,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Coins.executor": "Debug",
     "Application.Day0914.executor": "Run",
     "Application.Day0917.executor": "Run",
     "Application.Dec12.executor": "Run",
@@ -112,13 +115,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Nov25">
-    <configuration name="Dec21" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_8.Dec21" />
+  <component name="RunManager" selected="Application.Coins">
+    <configuration name="Coins" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_11.Coins" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.algorithm_8.*" />
+          <option name="PATTERN" value="org.example.algorithm_11.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -180,11 +183,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Coins" />
         <item itemvalue="Application.Nov25" />
         <item itemvalue="Application.Nov8" />
         <item itemvalue="Application.Nov2" />
         <item itemvalue="Application.Dec28" />
-        <item itemvalue="Application.Dec21" />
       </list>
     </recent_temporary>
   </component>
@@ -283,6 +286,8 @@
       <workItem from="1732518041147" duration="12000" />
       <workItem from="1732582160390" duration="1199000" />
       <workItem from="1732669099071" duration="3023000" />
+      <workItem from="1732672703157" duration="354000" />
+      <workItem from="1734999985956" duration="2725000" />
     </task>
     <task id="LOCAL-00001" summary="算法阶段学习">
       <option name="closed" value="true" />
@@ -449,6 +454,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_10/Nov25.java</url>
           <line>55</line>
           <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_11/Coins.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
