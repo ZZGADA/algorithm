@@ -75,6 +75,7 @@ class Solution {
 }
 ```
 
+--- 
 
 2. 为运算表达式设计优先级 [一个运算的表达式，选择括号添加的位置](https://leetcode.cn/problems/different-ways-to-add-parentheses/description/?envType=problem-list-v2&envId=memoization)
 
@@ -208,7 +209,7 @@ class Solution {
 
 ```
 
-
+--- 
 4. 目标和 [分情况+最终判断](https://leetcode.cn/problems/target-sum/)
 ```java
 
@@ -239,4 +240,65 @@ class Solution {
         dfs(index+1,record - nums[index]);
     }
 }
+```
+
+--- 
+
+5. 出现次数最多的子树元素和 [出现次数最多的子树元素和](https://leetcode.cn/problems/most-frequent-subtree-sum/?envType=problem-list-v2&envId=depth-first-search)
+```java
+class Solution {
+    private int maxCount = 0;
+
+    public int[] findFrequentTreeSum(TreeNode root) {
+        if (root == null) {
+            return new int[0];
+        }
+
+        // 后序遍历 递归返回 子树元素和
+        // key 子树元素和 val 出现的次数
+        Map<Integer, Integer> resMap = new HashMap<>();
+        postOrderTraversal(root, resMap);
+
+        // 找到出现次数最多的子树元素和
+        List<Integer> result = new ArrayList<>();
+        for (Map.Entry<Integer, Integer> entry : resMap.entrySet()) {
+            if (entry.getValue() == maxCount) {
+                result.add(entry.getKey());
+            }
+        }
+
+        // 将结果转换为数组
+        int[] resultArray = new int[result.size()];
+        for (int i = 0; i < result.size(); i++) {
+            resultArray[i] = result.get(i);
+        }
+
+        return resultArray;
+    }
+
+    // 后序遍历
+    private int postOrderTraversal(TreeNode root, Map<Integer, Integer> resMap) {
+        if (root == null) {
+            return 0;
+        }
+
+        // 遍历左子树
+        int leftSum = postOrderTraversal(root.left, resMap);
+
+        // 遍历右子树
+        int rightSum = postOrderTraversal(root.right, resMap);
+
+        // 当前节点的子树元素和
+        int sum = root.val + leftSum + rightSum;
+
+        // 更新子树元素和的频率
+        resMap.put(sum, resMap.getOrDefault(sum, 0) + 1);
+        maxCount = Math.max(maxCount, resMap.get(sum));
+
+        return sum;
+    }
+}
+
+
+
 ```
