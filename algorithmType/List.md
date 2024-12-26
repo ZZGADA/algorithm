@@ -91,3 +91,62 @@ class LRUCache {
 ```
 
 
+--- 
+2. 旋转链表 [旋转链表](https://leetcode.cn/problems/rotate-list/)
+```java
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode rotateRight(ListNode head, int k) {
+        int len = 0;
+        ListNode node = head;
+        ListNode pre = head;
+        ListNode next = head;
+        ListNode res = head;
+        // 统计总长度
+        while(node != null){
+            len++;
+            node = node.next;
+        }
+
+        if (len == 0){
+            return head;
+        }
+
+        // head 需要移动几步 
+        int step = k % len;
+        int count = 0;
+        if(step == 0){
+            return head;
+        }
+        
+        node = head;
+        while(node!=null){
+            count++;
+            if(len - count == step){
+                // 边界条件 
+                res = node.next;
+                node.next = null;
+                node = res;
+                pre = node;
+                continue;
+            }
+            pre = node;
+            node = node.next;
+        }
+        pre.next = head;
+        return res;
+    }
+}
+
+```
+
