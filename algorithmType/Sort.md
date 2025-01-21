@@ -149,8 +149,81 @@ class Solution {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
-
     }
 }
 
+```
+
+---
+
+4. 堆排序 [堆排序](https://leetcode.cn/problems/sort-an-array/)
+```java
+class Solution {
+    public int[] sortArray(int[] nums) {
+        heapSort(nums);
+        return nums;
+    }
+
+    // 堆排序
+    public void heapSort(int[] nums) {
+        int len = nums.length - 1;
+
+        // 初始化建堆 
+        buildMaxHeap(nums,len);
+        for(int i = len;i>=1;--i){
+            swap(nums,i,0); // 将堆顶元素 至于最尾 
+            len -=1;    // 调整带排序数组的大小 最后一个就不动了
+            maxHeapify(nums,0,len); // 向下调整 将最大元素不断置于父节点
+        }
+    }
+
+    // 初始化 建最大堆 
+    // 从第一个非叶子节点开始 然后将最大元素调整到堆顶
+    // 每一次swap 都要递归向下 才能保证每一个节点都是 最大堆
+    public void buildMaxHeap(int[] nums, int len) {
+        // 最后一个非叶子节点的索引是 len/2 -1
+        // 从最后一个非叶子节点向前 每一个节点都要遍历 进行调整
+        for (int i = len / 2 ; i >= 0; i--) {
+            maxHeapify(nums,i,len);
+        }
+    }
+
+    // 将父节点调整为最大堆 不断向下递推
+    public void maxHeapify(int[] nums, int i, int len) {
+        while (2 * i + 1 <= len) {
+            // 左子树 & 右子树
+            int lson = 2 * i + 1;
+            int rson = 2 * i + 2;
+            int large;
+
+            // 大根堆 选择子树最大元素  判断左子树
+            if (lson <= len && nums[lson] > nums[i]) {
+                large = lson;
+            } else {
+                large = i;
+            }
+
+            // 大根堆 选择子树最大元素  判断右子树
+            // 注意判断的节点 是判断当前三个节点中最大的元素
+            if (rson <= len && nums[rson] > nums[large]) {
+                large = rson;
+            }
+
+            // 交换 得到最大堆
+            if (large != i) {
+                swap(nums, i, large);
+                i = large;
+            } else {
+                // 无需交换 当前子树就是最大堆 
+                break;
+            }
+        }
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+}
 ```
