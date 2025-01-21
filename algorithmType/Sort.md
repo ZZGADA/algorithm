@@ -128,11 +128,12 @@ class Solution {
         int target = nums[right];
         int i = left, j = right - 1;
         while (true) {
+            // 至少一个到达边界 
             while (i <= j && nums[i] < target) {
                 i++;
             }
 
-            while (i <= j && nums[j] > target) {
+            while (i < j && nums[j] > target) {
                 j--;
             }
             if (i >= j)break;
