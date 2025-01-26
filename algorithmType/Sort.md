@@ -50,7 +50,7 @@ class Solution {
 ```
 
 --- 
-2. 快排+随机选择交换 [快排+随机选择交换](https://leetcode.cn/problems/sort-an-array/solutions/178305/pai-xu-shu-zu-by-leetcode-solution/)
+2. 快排+随机选择交换 [快排+随机选择交换](https://leetcode.cn/problems/sort-an-array/solutions/178305/pai-xu-shu-zu-by-leetcode-solution/)   
 随机数的目的是加快排序
 ```java
 class Solution {
@@ -154,7 +154,7 @@ class Solution {
 
 ```
 
-top k 问题 最大堆写法
+top k 问题 最大堆写法   
 ```java
 class Solution {
     public int findKthLargest(int[] nums, int k) {
