@@ -43,6 +43,9 @@ class Solution {
 
 其实这题的关键就在于要把coins的遍历放在外面，因为要维持有序性，不然就会出现1，2和2，1重复计数的问题。   
 将coins放在外面，那么内部遍历amount，保证当下一个coin被遍历的时候，上一个状态一定是可行解，同时有序。
+
+此外：dp[i] 表示兑换金额为i的时候 可行的方案数
+递推公式为：dp[i] = dp[i] + dp[i-coin] ; 表示为 硬币coin的加入 将从兑换i-coin的金额跳转过来。所以直接将dp[i-coin]加入到dp[i] 的方案数中。同时dp[i] 为上一轮递推记录的结果。
 ```java
 class Solution {
     public int change(int amount, int[] coins) {
