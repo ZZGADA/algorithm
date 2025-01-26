@@ -154,6 +154,62 @@ class Solution {
 
 ```
 
+top k 问题 最大堆写法
+```java
+class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        return topK(nums, k);
+    }
+
+    public int topK(int[] nums, int k) {
+        int end = nums.length - 1;
+
+        buildHeap(nums, end); // 最大堆初始化
+        for (int i = 0; i < k; i++) {
+            swap(nums, 0, end--);
+            maxHeapify(nums, 0, end);
+        }
+
+        return nums[end + 1];
+    }
+
+    // 构建大根堆
+    public void buildHeap(int[] nums, int end) {
+        for (int i = end / 2; i >= 0; i--) {
+            maxHeapify(nums, i, end);
+        }
+    }
+
+    // 构建大根堆的过程
+    // 向父节点进行比较
+    public void maxHeapify(int[] nums, int index, int end) {
+        int left = index * 2 + 1;
+        int right = index * 2 + 2;
+
+        int largeIndex = index;
+        if (left > end)
+            return;
+
+        // 交换得到当前节点的最大堆
+        largeIndex = nums[index] > nums[left] ? index : left;
+        largeIndex = right > end ? largeIndex : nums[largeIndex] > nums[right] ? largeIndex : right;
+        if (largeIndex == index)
+            return;
+        swap(nums, largeIndex, index);
+
+        // 递归向下 继续构造最大堆
+        maxHeapify(nums, largeIndex, end);
+    }
+
+    public void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+
+}
+```
+
 ---
 
 4. 堆排序 [堆排序](https://leetcode.cn/problems/sort-an-array/)
