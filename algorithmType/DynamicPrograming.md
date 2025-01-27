@@ -592,3 +592,67 @@ class Solution {
     }
 }
 ```
+
+--- 
+15. 打家劫舍1 [打家劫舍1](https://leetcode.cn/problems/house-robber/?envType=problem-list-v2&envId=dynamic-programming)   
+```java
+class Solution {
+    public int rob(int[] nums) {
+        // 可以空两间房子 只要不连续就好了
+        // 区分两种状态 当前房屋偷还是不透
+
+        int[] dpSteal = new int[nums.length];
+        int[] dpNotSteal = new int[nums.length];
+        int res = 0;
+
+        dpSteal[0] = nums[0];
+        dpNotSteal[0] = 0;
+        res = res = Math.max(dpNotSteal[0],dpSteal[0]);
+
+        for (int i = 1; i < nums.length; i++) {
+            dpSteal[i] = dpNotSteal[i - 1] + nums[i];
+            dpNotSteal[i] = Math.max(dpNotSteal[i - 1], dpSteal[i - 1]); // 连续两次不偷
+            res = Math.max(dpNotSteal[i],dpSteal[i]);
+        }
+
+        return res;
+    }
+}
+```
+
+
+16. [打家劫舍2](https://leetcode.cn/problems/house-robber-ii/)   
+区分两种情况 直接递推就好了
+```java
+class Solution {
+    public int rob(int[] nums) {
+        // 可以空两间房子 只要不连续就好了
+        // 区分两种状态 当前房屋偷还是不透
+        return Math.max(stealFirst(nums, true), stealFirst(nums, false));
+    }
+
+    public int stealFirst(int[] nums, boolean ifStealFirst) {
+        int[] dpSteal = new int[nums.length];
+        int[] dpNotSteal = new int[nums.length];
+        int res = 0;
+
+        dpSteal[0] = ifStealFirst ? nums[0] : 0;
+        dpNotSteal[0] = 0;
+        res = res = Math.max(dpNotSteal[0], dpSteal[0]);
+
+        for (int i = 1; i < nums.length; i++) {
+            if (ifStealFirst && i == nums.length - 1) {
+                // 偷了第一个 那么最后一个不能偷
+                dpSteal[i] = Math.max(dpNotSteal[i - 1], dpSteal[i - 1]);
+            }else {
+                // 没偷第一个 那么最后一个可以偷
+                dpSteal[i] = dpNotSteal[i - 1] + nums[i];
+            }
+            dpNotSteal[i] = Math.max(dpNotSteal[i - 1], dpSteal[i - 1]); // 连续两次不偷
+            int temp = Math.max(dpNotSteal[i], dpSteal[i]);
+            res = Math.max(res,temp);
+        }
+        return res;
+    }
+}
+```
