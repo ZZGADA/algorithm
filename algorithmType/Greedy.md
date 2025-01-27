@@ -89,7 +89,7 @@ class Solution {
 ```
 
 2. 下面这个超时
-   ```java
+```java
 
 class Solution {
     public int maxEvents(int[][] events) {
@@ -129,11 +129,11 @@ class Solution {
 }
 ```
 
-3. 用优先队列 这个是对的
-   ```java
+--- 
+3. 用优先队列 这个是对的  
 
+```java 
 class Solution {
-
     public int maxEvents(int[][] events) {
         // 首先排序：开始时间小的在前。这样是方便我们顺序遍历，把开始时间一样的都放进堆
         Arrays.sort(events, (o1, o2) -> o1[0] - o2[0]);
@@ -158,7 +158,6 @@ class Solution {
             last++;
         }
         return res;
-
     }
 }
 ```
@@ -221,6 +220,40 @@ class Solution {
 
         return -1;
 
+    }
+}
+```
+
+4. [最接近的三数和](https://leetcode.cn/problems/3sum-closest/description/)
+```java
+class Solution {
+    public int threeSumClosest(int[] nums, int target) {
+        Arrays.sort(nums);
+        int length = nums.length;
+        int gap = Integer.MAX_VALUE;
+        int res = 0;
+        for (int i = 0; i < length - 2; i++) {
+            int left = i + 1, right = length - 1;
+            while (left < right) {
+                int sum = nums[i] + nums[left] + nums[right];
+                int originGap = target - sum;
+                int ggap = Math.abs(originGap);
+                if (ggap < gap) {
+                    res = sum;
+                    gap = ggap;
+                }
+
+                if (originGap < 0) {
+                    right--; // 大了
+                } else if (originGap > 0) {
+                    left++;
+                } else {
+                    return target;
+                }
+            }
+        }
+
+        return res;
     }
 }
 ```
