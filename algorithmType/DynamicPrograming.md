@@ -561,3 +561,34 @@ class Solution {
     }
 }
 ```
+
+--- 
+14. [最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/?envType=problem-list-v2&envId=dynamic-programming)
+```java
+class Solution {
+    public String longestPalindrome(String s) {
+        // 动态规划
+        // dp[i][j] 表示 s[i~j]中是否为回文字符串
+        // 递推公式：dp[i][j] == s[i] == s[j] && dp[i+1][j-1];
+        // 注意substring 长度为2的特殊情况
+
+        boolean[][] dp = new boolean[s.length()][s.length()];
+        String res = "";
+        for (int i = 0; i < s.length(); i++) {
+            dp[i][i] = true;
+            res = s.substring(i,i+1);
+        }
+
+        for (int step = 1; step < s.length(); step++) {
+            for (int i = 0; i < s.length() - step; i++) {
+                int j = i + step;
+                dp[i][j] = s.charAt(i) == s.charAt(j) && (dp[i + 1][j - 1]|| step == 1);
+                if (dp[i][j] && j-i +1 >res.length()) {
+                    res = s.substring(i,j+1);
+                }
+            }
+        }
+        return res;
+    }
+}
+```
