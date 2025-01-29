@@ -59,3 +59,79 @@ class Solution {
     }
 }
 ```
+
+
+--- 
+2.  [整数转罗马数字](https://leetcode.cn/problems/integer-to-roman/?envType=study-plan-v2&envId=top-interview-150)
+```java
+class Solution {
+    public String intToRoman(int num) {
+        int[] arrNum = new int[] { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
+        String[] arrChar = new String[] { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
+        int index = 0;
+        StringBuilder sb = new StringBuilder();
+        while (num != 0 && index < arrNum.length) {
+            int chu = num / arrNum[index];
+            int mod = num % arrNum[index];
+            while (chu-- > 0) {
+                sb.append(arrChar[index]);
+            }
+            index++;
+            num = mod;
+        }
+        return sb.toString();
+    }
+}
+```
+---- 
+3. [罗马数字转整数](https://leetcode.cn/problems/roman-to-integer/?envType=study-plan-v2&envId=top-interview-150)
+```java
+class Solution {
+    public int romanToInt(String s) {
+        char[] arr = s.toCharArray();
+        Map<Character, Integer> map = new HashMap<>();
+        map.put('I', 1);
+        map.put('V', 5);
+        map.put('X', 10);
+        map.put('L', 50);
+        map.put('C', 100);
+        map.put('D', 500);
+        map.put('M', 1000);
+
+        int res = map.get(arr[arr.length - 1]);
+        for (int i = arr.length - 2; i >= 0; i--) {
+            if (map.get(arr[i]) < map.get(arr[i + 1])) {
+                res -= map.get(arr[i]);
+            } else {
+                res += map.get(arr[i]);
+            }
+        }
+
+        return res;
+    }
+}
+```
+
+--- 
+4. [反转数组](https://leetcode.cn/problems/rotate-array/description/?envType=study-plan-v2&envId=top-interview-150)
+```java
+class Solution {
+    public void rotate(int[] nums, int k) {
+        int length = nums.length;
+        k %= length;
+        reverse(nums, 0, length - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, length - 1);
+    }
+
+    public void reverse(int[] nums, int i, int j) {
+        while (i < j) {
+            int temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
+            i++;
+            j--;
+        }
+    }
+}
+```
