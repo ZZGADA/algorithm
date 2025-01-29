@@ -135,3 +135,120 @@ class Solution {
     }
 }
 ```
+
+--- 
+5. [指定区间的反转链表](https://leetcode.cn/problems/reverse-linked-list-ii/description/)
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ * int val;
+ * ListNode next;
+ * ListNode() {}
+ * ListNode(int val) { this.val = val; }
+ * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        ListNode ppre = new ListNode();
+        ppre.next = head;
+        int flag = 1;
+        ListNode reverseHead = ppre;
+        while (flag < left ) {
+            reverseHead = reverseHead.next;
+            flag++;
+        }
+
+        reverse(reverseHead, flag, right);
+        return ppre.next;
+    }
+
+    public void reverse(ListNode ls, int flag, int right) {
+        ListNode lr = null;
+        ListNode node = ls.next, pre = ls.next, next = null;
+
+        while (flag < right) {
+            next = node.next; // 下一个节点
+            node.next = next.next; // 指向下下个节点
+            next.next = pre; // 指向前置节点
+            ls.next = next;
+            pre = ls.next;
+            flag++;
+        }
+    }
+}
+```
+--- 
+6. [回文子串](https://leetcode.cn/problems/palindromic-substrings/)
+ 返回回文子串的个数
+```java
+class Solution {
+    // 返回回文子串的个数
+    public int countSubstrings(String s) {
+        char[] arr = s.toCharArray();
+        int res = arr.length;   
+        for (int i = 0; i < arr.length; i++) {
+            // 区分两种情况
+            res += centerExpansion(arr, i - 1, i + 1);
+            res += centerExpansion(arr, i, i + 1);
+        }
+
+        return res;
+    }
+
+    public int centerExpansion(char[] arr, int left, int right) {
+        int res = 0;
+        // 中心扩散
+        while (left >= 0 && right < arr.length && arr[left] == arr[right]) {
+            res++;
+            left--;
+            right++;
+        }
+        return res;
+    }
+}
+```
+
+```java
+class Solution {
+    // 返回回文子串的个数
+    public int countSubstrings(String s) {
+        char[] arr = s.toCharArray();
+        int res = 0, left = 0, right = 0;
+        boolean[][] dp = new boolean[arr.length][arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            // 纯种中心扩散
+            left = i;
+            right = i;
+            while (right < arr.length && arr[left] == arr[right]) {
+                if (!dp[left][right]) {
+                    dp[left][right] = true;
+                    res++;
+                }
+                right++;
+            }
+            right--;
+            left--;
+            while (left >= 0 && arr[left] == arr[right]) {
+                if (!dp[left][right]) {
+                    dp[left][right] = true;
+                    res++;
+                }
+                left--;
+            }
+            right++;
+            while (left >= 0 && right < arr.length && arr[left] == arr[right]) {
+                if (!dp[left][right]) {
+                    res++;
+                    dp[left][right] = true;
+                }
+                left--;
+                right++;
+            }
+        }
+
+        return res;
+    }
+}
+```
