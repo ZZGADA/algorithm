@@ -656,3 +656,35 @@ class Solution {
     }
 }
 ```
+
+17. [跳跃游戏2](https://leetcode.cn/problems/jump-game-ii/?envType=study-plan-v2&envId=top-interview-150)
+* 动态规划做法 （还有贪心做法 见贪心）
+```java
+class Solution {
+    public int jump(int[] nums) {
+        // 返回最小跳跃次数
+        // 两个条件
+        // 1. 可到达边界
+        // 2. 跳跃次数最少
+
+        // dp[i] 跳到i 需要的最小跳跃数
+        // 递推：dp[i] = dp[i-k] + 1
+        int end = nums.length - 1;
+        int[] dp = new int[nums.length];
+        Arrays.fill(dp, nums.length);
+        dp[0] = 0;
+        int index = 0, maxJumpIndex = nums[0];
+        while (index <= maxJumpIndex && index <= end) {
+            int i = index + 1;
+            while (i <= index + nums[index] && i <= end) {
+                dp[i] = Math.min(dp[index] + 1, dp[i]);
+                maxJumpIndex = Math.max(i + nums[i], maxJumpIndex);
+                i++;
+            }
+            index++;
+        }
+
+        return dp[end];
+    }
+}
+```

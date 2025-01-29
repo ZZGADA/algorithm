@@ -257,3 +257,51 @@ class Solution {
     }
 }
 ```
+
+5. [跳跃游戏](https://leetcode.cn/problems/jump-game/?envType=study-plan-v2&envId=top-interview-150)
+```java
+class Solution {
+    public boolean canJump(int[] nums) {
+        int length = nums.length;
+        int end = length - 1;
+        int maxJumpIndex = nums[0];
+        int index = 0;
+        while (index <= maxJumpIndex) {
+            maxJumpIndex = Math.max(maxJumpIndex, index + nums[index]);
+            index++;
+            if (maxJumpIndex >= end) {
+                break;
+            }
+        }
+
+        return maxJumpIndex >= end;
+    }
+}
+```
+
+6. [跳跃游戏2](https://leetcode.cn/problems/jump-game-ii/?envType=study-plan-v2&envId=top-interview-150)
+* 贪心做法（有动态规划做法 可见动态规划）
+```java
+class Solution {
+    public int jump(int[] nums) {
+        int end = nums.length - 1;
+        int ans = 0, index = 0, maxJumpIndex = nums[0];
+
+        if(nums.length == 1){
+            return 0 ;
+        }
+
+
+        while (index <= maxJumpIndex && index <= end) {
+            int temp = maxJumpIndex;
+            while (index <= temp && index <= end) {
+                maxJumpIndex = Math.max(maxJumpIndex, nums[index] + index); // 更新最远跳跃距离
+                index++;    
+            }
+            ans++;
+        }
+
+        return ans;
+    }
+}
+```
