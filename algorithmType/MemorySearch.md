@@ -244,3 +244,36 @@ class Solution {
 }
 
 ```
+
+7. [最长回文子序列](https://leetcode.cn/problems/longest-palindromic-subsequence/solutions/2203001/shi-pin-jiao-ni-yi-bu-bu-si-kao-dong-tai-kgkg/)
+```java
+class Solution {
+    public int longestPalindromeSubseq(String S) {
+        // 题目要求是子序列：寻找最长回文子序列 然后返回长度
+        char[] s = S.toCharArray();
+        int n = s.length;
+        int[][] memo = new int[n][n];   // i~j 的最长回文子序列长度
+        for (int[] row : memo) {
+            Arrays.fill(row, -1); // -1 表示还没有计算过
+        }
+        return dfs(0, n - 1, s, memo);
+    }
+
+    private int dfs(int i, int j, char[] s, int[][] memo) {
+        if (i > j) {
+            return 0; // 空串
+        }
+        if (i == j) {
+            return 1; // 只有一个字母
+        }
+        if (memo[i][j] != -1) { // 之前计算过
+            return memo[i][j];
+        }
+        if (s[i] == s[j]) {
+            // 外侧边界找到了 只看里面的子序列
+            return memo[i][j] = dfs(i + 1, j - 1, s, memo) + 2; // 都选
+        }
+        return memo[i][j] = Math.max(dfs(i + 1, j, s, memo), dfs(i, j - 1, s, memo)); // 枚举哪个不选
+    }
+}
+```

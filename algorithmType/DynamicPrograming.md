@@ -688,3 +688,28 @@ class Solution {
     }
 }
 ```
+18.  [最长回文子序列](https://leetcode.cn/problems/longest-palindromic-subsequence/solutions/2203001/shi-pin-jiao-ni-yi-bu-bu-si-kao-dong-tai-kgkg/)   
+```java
+class Solution {
+   // 区间dp
+   public int longestPalindromeSubseq(String S) {
+      char[] s = S.toCharArray();
+      int[][] dp = new int[s.length][s.length];
+      // 根据递推公式 确定left为倒叙 right为正序
+      for (int left = s.length - 1; left >= 0; left--) {
+         for (int right = left; right < s.length; right++) {
+            if (left == right) {
+               dp[left][right] = 1;
+               continue;
+            }
+            if (s[left] == s[right]) {
+               dp[left][right] = dp[left + 1][right - 1] + 2;
+            } else {
+               dp[left][right] = Math.max(dp[left + 1][right], dp[left][right - 1]);
+            }
+         }
+      }
+      return dp[0][s.length-1];
+   }
+}
+```
