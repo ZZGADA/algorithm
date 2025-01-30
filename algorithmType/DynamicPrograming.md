@@ -697,19 +697,42 @@ class Solution {
       int[][] dp = new int[s.length][s.length];
       // 根据递推公式 确定left为倒叙 right为正序
       for (int left = s.length - 1; left >= 0; left--) {
-         for (int right = left; right < s.length; right++) {
-            if (left == right) {
-               dp[left][right] = 1;
-               continue;
-            }
-            if (s[left] == s[right]) {
-               dp[left][right] = dp[left + 1][right - 1] + 2;
-            } else {
-               dp[left][right] = Math.max(dp[left + 1][right], dp[left][right - 1]);
-            }
-         }
+          for (int right = left; right < s.length; right++) {
+              if (left == right) {
+                  dp[left][right] = 1;
+                  continue;
+              }
+              if (s[left] == s[right]) {
+                  dp[left][right] = dp[left + 1][right - 1] + 2;
+              } else {
+                  dp[left][right] = Math.max(dp[left + 1][right], dp[left][right - 1]);
+              }
+          }
       }
       return dp[0][s.length-1];
    }
+}
+```
+
+```java
+class Solution {
+    public int longestCommonSubsequence(String text1, String text2) {
+        char[] s1 = text1.toCharArray();
+        char[] s2 = text2.toCharArray();
+        int[][] dp = new int[s1.length+1][s2.length+1]; // 边界情况 
+        int end1 = s1.length-1,end2 = s2.length-1;
+
+        for(int i = end1;i>=0;i--){
+            for(int j = end2 ;j>=0;j--){
+                if(s1[i] == s2[j]){
+                    dp[i][j] = dp[i+1][j+1] + 1;
+                }else{
+                    dp[i][j] = Math.max(dp[i+1][j],dp[i][j+1]);
+                }
+            }
+        }
+        
+        return dp[0][0];
+    }
 }
 ```

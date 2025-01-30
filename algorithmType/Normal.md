@@ -252,3 +252,109 @@ class Solution {
     }
 }
 ```
+--- 
+7. [最长公共前缀和](https://leetcode.cn/problems/find-the-length-of-the-longest-common-prefix/solutions/2644176/liang-chong-xie-fa-yong-zi-fu-chuan-bu-y-qwh8/)
+* 这个方法超时了 但是我觉得我写的没有错
+```java
+class Solution {
+    public int longestCommonPrefix(int[] arr1, int[] arr2) {
+        int prefixRes = 0;
+        for (int num1 : arr1) {
+            int prefix = 0;
+            if(prefixRes != 0 && num1 < prefixRes){
+                continue;
+            }
+            for (int num2 : arr2) {
+                int prefixTemp;
+                if (prefixRes != 0) {
+                    prefixTemp = getPrefixSecond(num1, num2, prefixRes);
+                } else {
+                    prefixTemp = prefix == 0 ? getPrefixFirst(num1, num2) : getPrefixSecond(num1, num2, prefix);
+                }
+                prefix = Math.max(prefix, prefixTemp);
+            }
+            prefixRes = Math.max(prefix, prefixRes);
+        }
+        return prefixRes == 0 ? 0 : String.valueOf(prefixRes).length();
+    }
+
+    // 一组中已经知道最长的公共前缀了
+    public int getPrefixSecond(int num1, int num2, int prefix) {
+        // num1 不变 然后看公共前缀
+        int len = String.valueOf(num1).length() - String.valueOf(prefix).length();
+        int mod1 = (int) Math.pow(10, len);
+        int mod2 = mod1;
+
+        int prefix1, prefix2;
+        while (mod1 > 0 && mod2 > 0) {
+            prefix1 = num1 / mod1;
+            prefix2 = num2 / mod2;
+            if (prefix1 > prefix2) {
+                mod2 /= 10;
+            } else if (prefix1 < prefix2) {
+                mod1 /= 10;
+            } else {
+                prefix = prefix1;
+                mod1 /= 10;
+                mod2 /= 10;
+            }
+        }
+        return prefix;
+    }
+
+    // 一组中第一次求最长公共前缀
+    public int getPrefixFirst(int num1, int num2) {
+        int prefix = 0;
+        int mod1 = 1, mod2 = 1;
+        int prefix1 = num1 / mod1;
+        int prefix2 = num2 / mod2;
+
+        while (prefix1 > 0 && prefix2 > 0) {
+            if (prefix1 > prefix2) {
+                mod1 *= 10;
+            } else if (prefix1 < prefix2) {
+                mod2 *= 10;
+            } else {
+                prefix = prefix1;
+                break;
+            }
+            prefix1 = num1 / mod1;
+            prefix2 = num2 / mod2;
+        }
+        return prefix;
+    }
+}
+```
+* 这个是正确解法
+```java
+class Solution {
+    public int longestCommonPrefix(int[] arr1, int[] arr2) {
+        Set<Integer> set = new HashSet<Integer>();
+        for (int num1 : arr1) {
+            int mod = 1;
+            int prefix = num1 / mod;
+            while (prefix > 0) {
+                set.add(prefix);
+                mod *= 10;
+                prefix = num1 / mod;
+            }
+        }
+
+        int ans = 0;
+        for (int num2 : arr2) {
+            int mod = 1;
+            int prefix = num2 / mod;
+            while (prefix > 0) {
+                if (set.contains(prefix)) {
+                    int len = Integer.toString(prefix).length();
+                    ans = ans > len ? ans : len;
+                    break;
+                }
+                mod *= 10;
+                prefix = num2 / mod;
+            }
+        }
+        return ans;
+    }
+}
+```
