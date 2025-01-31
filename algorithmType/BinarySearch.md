@@ -262,3 +262,123 @@ class Solution {
     }
 }
 ```
+7. [第N位数字](https://leetcode.cn/problems/nth-digit/description/?envType=problem-list-v2&envId=binary-search)
+```java
+class Solution {
+    public int findNthDigit(int n) {
+        // 1-9 (10^1 - 10^0) *1
+        // 10-99 (10^2 - 10^1) *2
+        // 100 - 999 (10^3 - 10^2) *3
+        // 1000 - 9999 (10^4 - 10^3) *4
+
+        // 寻找范围区间
+        int zhi = 1;
+        long numLength = 0, maxEnd = 0;
+        while (n > numLength) {
+            numLength += (long) (Math.pow(10, zhi) - Math.pow(10, zhi - 1)) * zhi;
+            zhi++;
+        }
+        zhi--; // 区间内数字都是zhi位
+        numLength -= (Math.pow(10, zhi) - Math.pow(10, zhi - 1)) * zhi;
+        n -= numLength; // 确定区间内的第n个数字
+
+
+        int flag = (n - 1) / zhi;   //区间内的第flag数
+        int mod = (n - 1) % zhi;    // 第flag数的第mod位
+
+        // 确定区间范围
+        int start = (int) Math.pow(10, zhi - 1);
+        int end = (int) Math.pow(10, zhi) - 1;
+
+        // 开始2分查找  寻找区间内的第flag数
+        int left = start;
+        int right = end;
+        int res = 0;
+        while (left <= right) {
+            int mid = (right - left) / 2 + left;
+            int midflag =  mid - start;
+            if (flag < midflag) {
+                right = mid - 1;
+            } else if (flag > midflag) {
+                left = mid + 1;
+            } else {
+                res = Integer.toString(mid).charAt(mod) - '0';
+                break;
+            }
+        }
+        return res;
+    }
+}
+```
+
+8. [我的日程表1](https://leetcode.cn/problems/my-calendar-i/description/?envType=problem-list-v2&envId=binary-search)
+```java
+
+
+class MyCalendar {
+    private List<Integer> listStart;
+    private List<Integer> listEnd;
+
+    public MyCalendar() {
+        listStart = new ArrayList<>();
+        listEnd = new ArrayList<>();
+        listStart.add(0);
+        listEnd.add(0);
+    }
+
+    // 可添加到日程 不会导致重复预定 返回true 否则返回false
+    // 区间范围是左闭 右开
+    public boolean book(int startTime, int endTime) {
+        // 偏移量 + 长度
+        // 寻找左边第一个节点的起始时间和时长
+        boolean res = false;
+        int leftFirstIndex = findLeftFirst(startTime);
+        int rightFirstIndex = leftFirstIndex + 1;
+        // System.out.println(leftFirstIndex);
+
+        int sst = rightFirstIndex >= listStart.size() ? Integer.MAX_VALUE : listStart.get(rightFirstIndex);
+        int eet = listEnd.get(leftFirstIndex);
+        if (startTime >= eet && endTime <= sst) {
+            listStart.add(leftFirstIndex + 1, startTime);
+            listEnd.add(leftFirstIndex + 1, endTime);
+            res = true;
+        }
+
+        // for (int s : listStart) {
+        //     System.out.printf("%d ", s);
+        // }
+        // System.out.println();
+        // System.out.println(leftFirstIndex);
+
+        return res;
+    }
+
+    // 寻找左边第一个节点的起始时间和时长
+    public int findLeftFirst(int startTime) {
+        int left = 0;
+        int right = listStart.size() - 1;
+        int leftFirstIndex = 0;
+        while (left < right) {
+            int mid = (right - left) / 2 + left;
+            if (startTime >= listStart.get(mid)) {
+                leftFirstIndex = mid;
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+
+        if (startTime >= listStart.get(right)) {
+            leftFirstIndex = right;
+        }
+
+        return leftFirstIndex;
+    }
+}
+
+/**
+ * Your MyCalendar object will be instantiated and called as such:
+ * MyCalendar obj = new MyCalendar();
+ * boolean param_1 = obj.book(startTime,endTime);
+ */
+```
