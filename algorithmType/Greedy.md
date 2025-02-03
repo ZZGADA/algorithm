@@ -305,3 +305,34 @@ class Solution {
     }
 }
 ```
+
+7. [最长有效括号](https://leetcode.cn/problems/longest-valid-parentheses/description/)
+```java
+class Solution {
+     public int longestValidParentheses(String s) {
+        int length = s.length();
+        int maxans = 0;
+        Deque<Integer> queue = new LinkedList<>();
+        queue.push(-1);
+
+        // 栈底元素为当前已经遍历过的元素中 「最后一个没有被匹配的右括号的下标」
+        // 其他元素维护左括号(栈只会存左括号的下标)
+        for(int i = 0;i<length;i++){
+            if(s.charAt(i) == '('){
+                queue.push(i);
+            }else{
+                queue.pop();
+                if(queue.isEmpty()){
+                    // 没有与之匹配的左括号
+                    queue.push(i);
+                }else{
+                    // 最大值是当前元素 与上一个不可行解的距离
+                    maxans = Math.max(maxans,i-queue.peek());
+                }
+            }
+        }
+
+        return maxans;
+    }
+}
+```

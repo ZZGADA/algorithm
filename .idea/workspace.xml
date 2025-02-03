@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="新排版">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithmType/BinarySearch.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/BinarySearch.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithmType/Normal.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/Normal.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithmType/Greedy.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/Greedy.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithmType/Recursion.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/Recursion.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +71,7 @@
     "Application.Grammar.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.Matrix.executor": "Debug",
+    "Application.MaxParentheses.executor": "Debug",
     "Application.MeiTuan.executor": "Run",
     "Application.MinHighTree (1).executor": "Run",
     "Application.MinHighTree.executor": "Run",
@@ -120,7 +121,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BinarySearch">
+  <component name="RunManager" selected="Application.MaxParentheses">
     <configuration name="BinarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.algorithm_13.BinarySearch" />
       <module name="algorithm" />
@@ -147,12 +148,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Nov25" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_10.Nov25" />
+    <configuration name="MaxParentheses" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_13.MaxParentheses" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.algorithm_10.*" />
+          <option name="PATTERN" value="org.example.algorithm_13.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -188,11 +189,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MaxParentheses" />
         <item itemvalue="Application.BinarySearch" />
         <item itemvalue="Application.TwoSum" />
         <item itemvalue="Application.ThreeSum" />
         <item itemvalue="Application.Coins" />
-        <item itemvalue="Application.Nov25" />
       </list>
     </recent_temporary>
   </component>
@@ -299,7 +300,7 @@
       <workItem from="1737380910822" duration="7845000" />
       <workItem from="1737506352652" duration="1334000" />
       <workItem from="1737859015014" duration="11011000" />
-      <workItem from="1738118066137" duration="18757000" />
+      <workItem from="1738118066137" duration="25136000" />
     </task>
     <task id="LOCAL-00001" summary="算法阶段学习">
       <option name="closed" value="true" />
@@ -496,6 +497,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_13/BinarySearch.java</url>
           <line>23</line>
           <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_13/MaxParentheses.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_13/MaxParentheses.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
