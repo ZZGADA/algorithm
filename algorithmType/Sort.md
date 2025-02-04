@@ -283,3 +283,48 @@ class Solution {
     }
 }
 ```
+
+--- 
+5. [归并排序](https://leetcode.cn/problems/sort-an-array/solutions/178305/pai-xu-shu-zu-by-leetcode-solution/)
+```java
+class Solution {
+    int[] temp;
+
+    public int[] sortArray(int[] nums) {
+        temp = new int[nums.length];
+        mergeSort(nums, 0, nums.length - 1);
+        return nums;
+    }
+
+    public void mergeSort(int[] nums, int left, int right) {
+        if (left >= right) {
+            return;
+        }
+
+        int mid = (right - left) / 2 + left;
+        int i = left, j = mid + 1, k = left;
+        mergeSort(nums, i, mid);
+        mergeSort(nums, j, right);
+
+        while (i <= mid && j <= right) {
+            if (nums[i] <= nums[j]) {
+                temp[k++] = nums[i++];
+            } else {
+                temp[k++] = nums[j++];
+            }
+        }
+
+        // 右侧没有更小的元素
+        while(i<=mid){
+            temp[k++] = nums[i++];
+        }
+        while(j<=right){
+            temp[k++] = nums[j++];
+        }
+
+        for (k = left; k <= right; k++) {
+            nums[k] = temp[k];
+        }
+    }
+}
+```
