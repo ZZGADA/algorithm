@@ -51,3 +51,120 @@ class Solution {
     }
 }
 ```
+
+2. [标准bfs搜索](https://leetcode.cn/problems/number-of-islands/?envType=problem-list-v2&envId=breadth-first-search)
+```java
+class Solution {
+    class Node {
+        public int i;
+        public int j;
+
+        public Node(int i, int j) {
+            this.i = i;
+            this.j = j;
+        }
+    }
+
+    // 上下左右
+    public int numIslands(char[][] grid) {
+        int m = grid.length, n = grid[0].length;
+        int res = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == '1') {
+                    // 为陆地 进行bfs搜索
+                    bfs(i, j, grid, m, n);
+                    res++;
+                }
+            }
+        }
+
+        return res;
+    }
+
+    public void bfs(int i, int j, char[][] grid, int m, int n) {
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(new Node(i, j));
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            while (size-- > 0) {
+                Node node = queue.poll();
+                // 边界情况
+                if (node.i - 1 >= 0 && grid[node.i - 1][node.j] == '1') {
+                    grid[node.i - 1][node.j] = '0';
+                    queue.add(new Node(node.i - 1, node.j));
+                }
+
+                if (node.j + 1 < n && grid[node.i][node.j + 1] == '1') {
+                    grid[node.i][node.j + 1] = '0';
+                    queue.add(new Node(node.i, node.j + 1));
+                }
+
+                if (node.i + 1 < m && grid[node.i + 1][node.j] == '1') {
+                    grid[node.i + 1][node.j] = '0';
+                    queue.add(new Node(node.i + 1, node.j));
+                }
+
+                if (node.j - 1 >= 0 && grid[node.i][node.j - 1] == '1') {
+                    grid[node.i][node.j - 1] = '0';
+                    queue.add(new Node(node.i, node.j - 1));
+                }
+            }
+        }
+    }
+
+}
+```
+
+3. [省份数量](https://leetcode.cn/problems/number-of-provinces/description/?envType=problem-list-v2&envId=breadth-first-search)
+```java
+class Solution {
+    class Node {
+        public int i;
+        public int j;
+
+        public Node(int i, int j) {
+            this.i = i;
+            this.j = j;
+        }
+    }
+
+    public int findCircleNum(int[][] grid) {
+        // bfs (注意有环 ， 和最大岛屿面积 没有什么差别)
+        int m = grid.length, n = grid[0].length;
+        int res = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == 1) {
+                    // 为陆地 进行bfs搜索
+                    bfs(i, j, grid, m, n);
+                    res++;
+                }
+            }
+        }
+
+        return res;
+    }
+
+    public void bfs(int i, int j, int[][] grid, int m, int n) {
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(new Node(i, j));
+        grid[i][j] = 0;
+
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            while (size-- > 0) {
+                Node nodeOrigin = queue.poll();
+                Node node = new Node(nodeOrigin.j, nodeOrigin.i);
+                // 边界情况
+                for (int k = 0; k < n; k++) {
+                    if(grid[node.i][k] == 1){
+                        queue.add(new Node(node.i,k));
+                        grid[node.i][k] = 0;
+                    }
+                }
+            }
+        }
+    }
+}
+```
