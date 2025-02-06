@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="新排版">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithmType/PrefixSum.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/PrefixSum.md" afterDir="false" />
-    </list>
+    <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="新排版" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -299,7 +296,7 @@
       <workItem from="1737380910822" duration="7845000" />
       <workItem from="1737506352652" duration="1334000" />
       <workItem from="1737859015014" duration="11011000" />
-      <workItem from="1738118066137" duration="32199000" />
+      <workItem from="1738118066137" duration="32898000" />
     </task>
     <task id="LOCAL-00001" summary="算法阶段学习">
       <option name="closed" value="true" />

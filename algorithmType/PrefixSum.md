@@ -122,7 +122,7 @@ class Solution {
 }
 ```
 
-* **正确版本**
+* **正确版本** 前缀和 + hash map
 ```java
 class Solution {
     public int findMaxLength(int[] nums) {
