@@ -84,3 +84,66 @@ class Solution {
     }
 }
 ```
+
+3. [最长连续数组](https://leetcode.cn/problems/contiguous-array/)
+* 超时版本
+```java
+class Solution {
+    public int findMaxLength(int[] nums) {
+        // 子数组中0和1的数量相同
+        // 要求子数组长度最长
+
+        // 使用前缀和
+        int[] preSum1 = new int[nums.length + 1];
+        int[] preSum0 = new int[nums.length + 1];
+        int res = 0;
+
+        // 前缀和初始化
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 1) {
+                preSum1[i + 1] = preSum1[i] + 1;
+                preSum0[i + 1] = preSum0[i];
+            } else {
+                preSum0[i + 1] = preSum0[i] + 1;
+                preSum1[i + 1] = preSum1[i];
+            }
+        }
+
+        
+        for (int j = 2; j <= nums.length; j++) {
+            for (int i = j - 1; i >= 0 && i>=k; i--) {
+                if(preSum1[j] - preSum1[i] == preSum0[j] - preSum0[i]){
+                    res = Math.max(res,j-i);
+                }
+            }
+        }
+        return res;
+    }
+}
+```
+
+* **正确版本**
+```java
+class Solution {
+    public int findMaxLength(int[] nums) {
+        int n = nums.length, ans = 0;
+        int[] sum = new int[n + 1];
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < n; i++) {
+            sum[i + 1] = sum[i] + (nums[i] == 1 ? 1 : -1);
+        }
+
+        map.put(0, 0);
+        for (int i = 1; i <= n; i++) {
+            int s = sum[i];
+            // 先判断后插入 保证顺序
+            if (map.containsKey(s)) {
+                ans = Math.max(ans, i - map.get(s));
+            } else {
+                map.put(s, i);
+            }
+        }
+        return ans;
+    }
+}
+```
