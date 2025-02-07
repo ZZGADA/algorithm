@@ -361,3 +361,48 @@ class Solution {
     }
 }
 ```
+
+--- 
+7. [找左下角的值](https://leetcode.cn/problems/find-bottom-left-tree-value/description/?envType=problem-list-v2&envId=depth-first-search)
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ * int val;
+ * TreeNode left;
+ * TreeNode right;
+ * TreeNode() {}
+ * TreeNode(int val) { this.val = val; }
+ * TreeNode(int val, TreeNode left, TreeNode right) {
+ * this.val = val;
+ * this.left = left;
+ * this.right = right;
+ * }
+ * }
+ */
+class Solution {
+    public int findBottomLeftValue(TreeNode root) {
+        return findLeftValue(root, 0, new int[]{0,-1})[0];
+    
+    }
+
+    // res[0] value res[1] depth
+    private int[] findLeftValue(TreeNode root, int depth, int[] res) {
+        if(root == null){
+            return res;
+        }
+        
+        // 中序遍历 先遍历到左侧节点
+        // 到达叶子节点
+        if (root.left == null && root.right == null) {
+            if (depth > res[1]) {
+                res[0] = root.val;
+                res[1] = depth;
+            }
+        }
+
+        return findLeftValue(root.right, depth + 1,findLeftValue(root.left, depth + 1 , res));
+        
+    }
+}
+```
