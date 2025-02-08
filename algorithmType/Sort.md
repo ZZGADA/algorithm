@@ -328,3 +328,105 @@ class Solution {
     }
 }
 ```
+
+6. [前k个高频元素](https://leetcode.cn/problems/top-k-frequent-elements/description/?envType=problem-list-v2&envId=heap-priority-queue)
+```java
+class Solution {
+    class Node {
+        int val;
+        int count;
+
+        Node(int v, int c) {
+            val = v;
+            count = c;
+        }
+    }
+
+    Map<Integer, Integer> map; // 元素 和 元素为止index
+    Node[] heap;
+    int len;
+
+    public int[] topKFrequent(int[] nums, int k) {
+        map = new HashMap<>();
+        heap = new Node[nums.length];
+        len = 0;
+
+        // 建堆
+        for (int num : nums) {
+            if (!map.containsKey(num)) {
+                // 元素不存在 在堆尾新增元素 并扩大容量
+                Node node = new Node(num, 1);
+
+                heap[len] = node;
+                map.put(num, len);
+
+                len++;
+            } else {
+                // 元素存在
+                int nodeIndex = map.get(num);
+                Node node = heap[nodeIndex];
+                node.count++;
+
+                while (nodeIndex > 0) {
+                    // 选择当前子堆中 最大的元素
+                    int fatherIndex = nodeIndex % 2 == 0 ? nodeIndex / 2 - 1 : nodeIndex / 2;
+                    if (heap[fatherIndex].count < node.count) {
+                        swap(fatherIndex, nodeIndex);
+                        nodeIndex = fatherIndex;
+                        node = heap[nodeIndex];
+                    } else {
+                        break;
+                    }
+                }
+            }
+        }
+
+        int[] res = new int[k];
+        int flag = 0;
+        while (k-- > 0) {
+            res[flag] = heap[0].val;
+            len--;
+            swap(0, len);
+            maxifyHeap(0);
+            flag++;
+        }
+
+        return res;
+    }
+
+    public void maxifyHeap(int i) {
+        if (i >= len) {
+            return;
+        }
+
+        int largerIndex = i, left = i * 2 + 1, right = i * 2 + 2;
+        if (left < len) {
+            largerIndex = heap[i].count < heap[left].count ? left : i;
+        }
+
+        if (right < len) {
+            largerIndex = heap[largerIndex].count < heap[right].count ? right : largerIndex;
+        }
+
+        if (i != largerIndex) {
+            swap(i , largerIndex);
+            maxifyHeap(largerIndex);
+        }
+    }
+
+    public void swap(int i, int j) {
+        map.put(heap[j].val, i);
+        map.put(heap[i].val, j);
+
+        Node temp = heap[i];
+        heap[i] = heap[j];
+        heap[j] = temp;
+    }
+
+    public void sswap(int i, int j) {
+        Node temp = heap[i];
+        heap[i] = heap[j];
+        heap[j] = temp;
+    }
+}
+```
