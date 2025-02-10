@@ -382,3 +382,83 @@ class MyCalendar {
  * boolean param_1 = obj.book(startTime,endTime);
  */
 ```
+
+9. [在排序数组中查找元素的第一个和最后一个位置](https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/)
+```java
+class Solution {
+    int resLeft = Integer.MAX_VALUE;
+    int resRight = Integer.MIN_VALUE;
+
+    public int[] searchRange(int[] nums, int target) {
+        // 非递减序列
+        ll(nums, target, 0, nums.length - 1);
+
+        resLeft = resLeft == Integer.MAX_VALUE ? -1 : resLeft;
+        resRight = resRight == Integer.MIN_VALUE ? -1 : resRight;
+        return new int[] { resLeft, resRight };
+    }
+
+    // 左边找最小的
+    public void ll(int[] nums, int target, int left, int right) {
+        if (left <= right) {
+            int mid = (right - left) / 2 + left;
+            if (target < nums[mid]) {
+                ll(nums,target,left,mid-1);
+            }else if(target == nums[mid]){
+                resLeft = Math.min(resLeft,mid);
+                resRight = Math.max(resRight,mid);
+                ll(nums,target,left,mid-1);
+                ll(nums,target,mid+1,right);
+            }else{
+                ll(nums,target,mid+1,right);
+                ll(nums,target,mid+1,right);
+            }
+        }
+
+    }
+}
+```
+
+10. [搜索插入位置](https://leetcode.cn/problems/search-insert-position/description/)
+```java
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        // 寻找小于 target的第一个数
+        int left = 0, right = nums.length - 1, mid = 0;
+        while (left <= right) {
+            mid = (right - left) / 2 + left;
+            if (target <= nums[mid]) {
+                right = mid - 1;
+            } else {
+                // 寻找小于 target的第一个数
+                left = mid + 1;
+            }
+        }
+
+        return left;
+    }
+}
+```
+
+11.[寻找比目标字母大的最小字母](https://leetcode.cn/problems/find-smallest-letter-greater-than-target/description/)
+```java
+class Solution {
+    public char nextGreatestLetter(char[] letters, char target) {
+        // 非递减排序
+        // 返回大于target的第一个字符
+        // 没有一个字符在字典上大于 'z'，所以我们返回 letters[0]
+        int left = 0, right = letters.length - 1;
+        while (left < right) {
+            int mid = (right - left) / 2 + left;
+            if (target >= letters[mid]) {
+                left = mid + 1;
+            } else {
+                // mid是大于target的数
+                right = mid;
+            }
+        }
+
+        return letters[right] <= target ? letters[0] : letters[right];
+    }
+}
+```
