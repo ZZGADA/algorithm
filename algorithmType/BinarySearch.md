@@ -462,3 +462,73 @@ class Solution {
     }
 }
 ```
+--- 
+12. [搜索二维矩阵](https://leetcode.cn/problems/search-a-2d-matrix/description/?envType=study-plan-v2&envId=top-100-liked)
+```java
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        // 矩阵 每行是非递减的
+        // 每一行第一个元素 大于前一行的最后一个整数。
+        // 1. 第一次二分查找 根据首列元素的特性 找到目标行
+        // 2. 找到目标行之后 在行内进行二分查找 判断targer元素是否存在
+        int m = matrix.length, n = matrix[0].length;
+        int row = binarySearchCol(matrix, 0, m, target);
+        return binarySearchRow(matrix, row, 0, n, target);
+
+    }
+
+    // binarySearchCol 找到小于target的第一个数
+    public int binarySearchCol(int[][] matrix, int up, int down, int target) {
+        int i = up, j = down - 1;
+        while (i + 1 < j) {
+            int mid = (j - i) / 2 + i;
+            if (target < matrix[mid][0]) {
+                j = mid - 1;
+            } else {
+                i = mid;
+            }
+            // System.out.printf("%d %d %d\n",i,mid,j);
+        }
+        if (i < down - 1) {
+            if (target >= matrix[i+1][0]){
+                i = i+1;
+            }
+        }
+        return i;
+    }
+
+    public boolean binarySearchRow(int[][] matrix, int row, int left, int right, int target) {
+        int i = left, j = right - 1;
+        while (i <= j) {
+            int mid = (j - i) / 2 + i;
+            if (target < matrix[row][mid]) {
+                j = mid - 1;
+            } else if (target > matrix[row][mid]) {
+                i = mid + 1;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+```
+
+* binarySearchCol 还可以写成 下面这样👇(下面这样写 更加优雅)
+  * 让res 记住当前判断的可行解 然后 i = mid+1 继续判断
+```java
+// binarySearchCol 找到小于target的第一个数
+    public int binarySearchCol(int[][] matrix, int up, int down, int target) {
+        int i = up, j = down - 1, res = up;
+        while (i <= j) {
+            int mid = (j - i) / 2 + i;
+            if (target < matrix[mid][0]) {
+                j = mid - 1;
+            } else {
+                res = mid;
+                i = mid + 1;
+            }
+        }
+        return res;
+    }
+```
