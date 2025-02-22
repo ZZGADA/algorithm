@@ -354,8 +354,119 @@ class Solution {
                 prefix = num2 / mod;
             }
         }
-        Integer.toString()
+        Integer.toString();
         return ans;
     }
 }
+```
+
+--- 
+8. [LRU](https://leetcode.cn/problems/lru-cache/submissions/601965683/?envType=study-plan-v2&envId=top-100-liked)
+关键步骤
+1. list 是一个环形链表
+2. pushToFront 中 有两个步骤。
+   1. 先将节点从链表中remove（remove）
+   2. 再将节点插入到第一个index的位置（addToFront）
+3. put的时候，先判断是否到capacity
+   1. 如果到了 先移除尾元素 （remove）
+   2. 在将当前需要put的节点插入到第一个index的位置
+```java
+package org.example.algorithm_14;
+
+import java.util.HashMap;
+import java.util.Map;
+
+class Node {
+    public int key;
+    public int value;
+
+    public Node prev, next;
+
+    public Node() {
+    }
+
+    public Node(int key, int value) {
+        this.key = key;
+        this.value = value;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+class LRUCache {
+    public int capacity;
+    public Node dummy; // 哨兵节点 也就是链表的头节点 环形链表
+    public Map<Integer, Node> keyToNode;
+
+    public LRUCache(int capacity) {
+        this.capacity = capacity;
+        this.dummy = new Node();
+        this.dummy.next = dummy;
+        this.dummy.prev = dummy;
+        this.keyToNode = new HashMap<>();
+    }
+
+    public int get(int key) {
+        if (!keyToNode.containsKey(key)) {
+            return -1;
+        }
+
+        // 将 key的节点 移动到头节点
+        this.pushToFront(key);
+        return keyToNode.get(key).value;
+    }
+
+
+    // 将节点移动到链表头
+    public void pushToFront(int key) {
+        remove(key);
+        addToFront(key);
+    }
+
+    public void put(int key, int value) {
+        // 判断是否存在
+        // 1. 存在更新value
+        // 2. 不存在就创建
+        // 3. 将插入节点孤立
+        // 4. 将新对象移动到列表头部
+
+        if (!keyToNode.containsKey(key)) {
+            // 不存在
+            if (keyToNode.size() >= capacity){
+                int keyRemove = this.dummy.prev.key;
+                remove(keyRemove);
+                keyToNode.remove(keyRemove);
+            }
+            Node node = new Node(key, value);
+            this.keyToNode.put(key, node);
+            addToFront(key);
+        } else {
+            // 存在 更新节点value
+            keyToNode.get(key).value = value;
+            pushToFront(key);
+        }
+    }
+
+    public void addToFront(int key){
+        Node node = this.keyToNode.get(key);
+        node.next = dummy.next;
+        dummy.next.prev = node;
+        node.prev = dummy;
+        dummy.next = node;
+    }
+
+    public void remove(int key) {
+        Node cur = this.keyToNode.get(key);
+        cur.prev.next = cur.next;
+        cur.next.prev = cur.prev;
+    }
+}
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache obj = new LRUCache(capacity);
+ * int param_1 = obj.get(key);
+ * obj.put(key,value);
+ */
+
 ```

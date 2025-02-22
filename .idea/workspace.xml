@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="新排版">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithmType/BinarySearch.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/BinarySearch.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,9 +123,9 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BFS">
-    <configuration name="BFS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_14.BFS" />
+  <component name="RunManager" selected="Application.BinarySearch">
+    <configuration name="BinarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_14.BinarySearch" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
@@ -192,7 +191,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BFS" />
+        <item itemvalue="Application.BinarySearch" />
         <item itemvalue="Application.KS" />
         <item itemvalue="Application.Greed" />
         <item itemvalue="Application.TopK" />
@@ -311,7 +310,7 @@
       <workItem from="1739709077963" duration="719000" />
       <workItem from="1739771446125" duration="3952000" />
       <workItem from="1739864526942" duration="907000" />
-      <workItem from="1740202373033" duration="1050000" />
+      <workItem from="1740202373033" duration="4817000" />
     </task>
     <task id="LOCAL-00001" summary="算法阶段学习">
       <option name="closed" value="true" />
@@ -525,12 +524,12 @@
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_14/BFS.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_14/BinarySearch.java</url>
           <line>38</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_14/BFS.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_14/BinarySearch.java</url>
           <line>24</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
