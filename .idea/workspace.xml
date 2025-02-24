@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="新排版">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithmType/Character.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/Character.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +60,7 @@
   "keyToString": {
     "Application.BFS.executor": "Run",
     "Application.BinarySearch.executor": "Debug",
+    "Application.Character.executor": "Run",
     "Application.Coins.executor": "Run",
     "Application.Day0914.executor": "Run",
     "Application.Day0917.executor": "Run",
@@ -94,6 +97,7 @@
     "Application.Xiaomi.executor": "Run",
     "Application.ZhaoYing.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -123,9 +127,22 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BinarySearch">
+  <component name="RunManager" selected="Application.Character">
     <configuration name="BinarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.algorithm_14.BinarySearch" />
+      <module name="algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.algorithm_14.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Character" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_14.Character" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
@@ -163,19 +180,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaxParentheses" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_13.MaxParentheses" />
-      <module name="algorithm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.algorithm_13.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TopK" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.algorithm_13.TopK" />
       <module name="algorithm" />
@@ -191,11 +195,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Character" />
         <item itemvalue="Application.BinarySearch" />
         <item itemvalue="Application.KS" />
         <item itemvalue="Application.Greed" />
         <item itemvalue="Application.TopK" />
-        <item itemvalue="Application.MaxParentheses" />
       </list>
     </recent_temporary>
   </component>
@@ -310,7 +314,8 @@
       <workItem from="1739709077963" duration="719000" />
       <workItem from="1739771446125" duration="3952000" />
       <workItem from="1739864526942" duration="907000" />
-      <workItem from="1740202373033" duration="4817000" />
+      <workItem from="1740202373033" duration="5326000" />
+      <workItem from="1740400484243" duration="3407000" />
     </task>
     <task id="LOCAL-00001" summary="算法阶段学习">
       <option name="closed" value="true" />
@@ -532,6 +537,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_14/BinarySearch.java</url>
           <line>24</line>
           <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_14/Character.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
