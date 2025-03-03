@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="新排版">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithmType/Character.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/Character.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algorithmType/Tree.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/Tree.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -317,7 +318,7 @@
       <workItem from="1740400484243" duration="4272000" />
       <workItem from="1740569522589" duration="1754000" />
       <workItem from="1740733387376" duration="862000" />
-      <workItem from="1740963811570" duration="1452000" />
+      <workItem from="1740963811570" duration="14796000" />
     </task>
     <task id="LOCAL-00001" summary="算法阶段学习">
       <option name="closed" value="true" />
@@ -542,7 +543,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_14/Character.java</url>
-          <line>17</line>
+          <line>16</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>

@@ -119,3 +119,51 @@ public class Trie {
 ``` 
 
 --- 
+--- 
+
+3. [文件中的最长路径](https://leetcode.cn/problems/longest-absolute-file-path/?envType=problem-list-v2&envId=depth-first-search)
+```java
+class Solution {
+    public int lengthLongestPath(String s) {
+        // 指向 文件 的 最长绝对路径 的长度
+        Map<Integer, String> map = new HashMap<>();
+        int n = s.length();
+        String ans = "";
+
+        for (int i = 0; i < n;) {
+            int level = 0;
+            while (i < n && s.charAt(i) == '\t') {
+                // 判断当前 文件或者文件夹是第几级的
+                i++;
+                level++;
+            }
+
+            int j = i;
+            boolean isDir = true;
+            while (j < n && s.charAt(j) != '\n') {
+                if (s.charAt(j) == '.') {
+                    isDir = false;
+                }
+                j++;
+            }
+
+            String cur = s.substring(i, j);
+            String prev = map.getOrDefault(level - 1, null);
+            String path = prev == null ? cur : prev + "/" + cur;
+
+            if (isDir) {
+                // if is dir
+                // 将当前路径推入到 map中 
+                // map永远记录只最新一级的路径
+                map.put(level, path);
+            } else {
+                // is file
+                ans = ans.length() > path.length() ? ans : path;
+            }
+            i = j + 1;
+        }
+        return ans.length();
+    }
+}
+```
+---- 
