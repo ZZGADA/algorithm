@@ -441,3 +441,58 @@ class Solution {
     }
 }
 ```
+--- 
+9. [验证回文子串](https://leetcode.cn/problems/valid-palindrome-ii/?envType=problem-list-v2&envId=greedy)
+1. 递归写法 
+```java
+class Solution {
+    public boolean validPalindrome(String s) {
+        return judge(s.toCharArray(), 0, s.length() - 1,false);
+    }
+
+    public boolean judge(char[] s, int left, int right,boolean flag) {
+        while (left <= right) {
+            if (s[left] == s[right]) {
+                left++;
+                right--;
+            } else {
+                // 边界情况
+                if(!flag){
+                    return judge(s,left+1,right,true) || judge(s,left,right-1,true);
+                }else{
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+}
+```
+2. 迭代写法
+```java
+class Solution {
+    boolean checkPalindrome(int left, int right, String s) {
+        while (left < right) {
+            if (s.charAt(left) != s.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+    public boolean validPalindrome(String s) {
+        int left = 0, right = s.length() - 1;
+        while (left < right) {
+            if (s.charAt(left) != s.charAt(right)) {
+                return checkPalindrome(left + 1, right, s) || checkPalindrome(left, right - 1, s);
+            }
+            left++;
+            right--;
+        }
+        return true;
+
+    }
+}
+```
