@@ -147,3 +147,53 @@ class Solution {
     }
 }
 ```
+
+--- 
+4. [求和路径Ï](https://leetcode.cn/problems/paths-with-sum-lcci/description/)
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ * int val;
+ * TreeNode left;
+ * TreeNode right;
+ * TreeNode() {}
+ * TreeNode(int val) { this.val = val; }
+ * TreeNode(int val, TreeNode left, TreeNode right) {
+ * this.val = val;
+ * this.left = left;
+ * this.right = right;
+ * }
+ * }
+ */
+class Solution {
+    Map<Long, Integer> map;
+    int res;
+
+    public int pathSum(TreeNode root, int sum) {
+        // 本质是一个前缀和问题
+        // sum[i] = sum[j+1] - target
+        map = new HashMap<>();
+        res = 0;
+        map.put(0L,1);
+        dfs(root,0,sum);
+        return res;
+    }
+
+    public void dfs(TreeNode root,long pathSum,int target) {
+        if(root == null){
+            return ;
+        }
+
+        pathSum+= root.val;
+        long find = pathSum - target;
+        res += map.getOrDefault(find,0);
+        map.put(pathSum,map.getOrDefault(pathSum,0)+1);
+
+        dfs(root.left,pathSum,target);
+        dfs(root.right,pathSum,target);
+
+        map.put(pathSum,map.get(pathSum)-1);
+    }
+}
+```

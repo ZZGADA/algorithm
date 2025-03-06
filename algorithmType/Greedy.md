@@ -336,3 +336,41 @@ class Solution {
     }
 }
 ```
+--- 
+8. [划分字母区间](https://leetcode.cn/problems/partition-labels/description/?envType=problem-list-v2&envId=greedy)
+本质就是合并区间
+```java
+class Solution {
+    public List<Integer> partitionLabels(String S) {
+        // 本质是合并区间
+        char[] s = S.toCharArray();
+        int n = s.length;
+        int[] last = new int[26];
+        List<Integer> res = new ArrayList<>();
+
+        // 记录字符出现的最后一个位置
+        for (int i = 0; i < n; i++) {
+            last[s[i] - 'a'] = i;
+        }
+
+        // 记录最远合并区间的长度
+        int i, j, maxEdge = last[s[0] - 'a'];
+        for (i = 0, j = 0; j < n; j++) {
+            int index = s[j] - 'a';
+            if (j <= maxEdge) {
+                // 当前字符位置小于最大合并区间
+                maxEdge = Math.max(maxEdge, last[index]);
+            } else {
+                // 当前字符位置大于最大合并区间
+                res.add(j - i);
+                i = j;
+                maxEdge = last[index];
+            }
+        }
+        if (i != j) {
+            res.add(j - i);
+        }
+        return res;
+    }
+}
+```
