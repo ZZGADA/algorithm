@@ -197,3 +197,76 @@ class Solution {
     }
 }
 ```
+
+--- 
+5. 多多的求和计算
+```text 
+多多路上从左到右有N棵树（编号1～N），其中第i个颗树有和谐值Ai。
+多多鸡认为，如果一段连续的树，它们的和谐值之和可以被M整除，那么这个区间整体看起来就是和谐的。
+现在多多鸡想请你帮忙计算一下，满足和谐条件的区间的数量。
+```
+示例1
+```text
+输入例子：
+5 2
+1 2 3 4 5
+输出例子：
+6
+例子说明：
+长度为1: [2], [4]
+长度为2: 无
+长度为3: [1,2,3], [3,4,5]
+长度为4: [1,2,3,4], [2,3,4,5]
+长度为5: 无
+共6个区间的和谐值之和可以被2整除。
+```
+
+```java
+import java.util.*;
+
+// 注意类名必须为 Main, 不要有任何 package xxx 信息
+public class Main {
+    public static void main(String[] args) {
+        // 前缀和 问题
+        Scanner in = new Scanner(System.in);
+        String[] nm = in.nextLine().trim().split(" ");
+        int n = Integer.parseInt(nm[0]), m = Integer.parseInt(nm[1]);
+        String[] numsStrs = in.nextLine().trim().split(" ");
+        int[] nums = new int[numsStrs.length];
+        long sums = 0L;
+        Map<Long, Integer> map = new HashMap<>();
+        map.put(0L, 1);
+        long res = 0;
+        for (int i = 0; i < numsStrs.length; i++) {
+            nums[i] = Integer.parseInt(numsStrs[i]);
+            sums += nums[i];
+            long mod = sums % m;
+            res += map.getOrDefault(mod, 0);
+            map.put(mod, map.getOrDefault(mod, 0) + 1);
+        }
+        System.out.println(res);
+    }
+}
+```
+
+--- 
+6. [和可被 K 整除的子数组](https://leetcode.cn/problems/subarray-sums-divisible-by-k/description/?envType=problem-list-v2&envId=prefix-sum)
+**关键是同余定理** 
+```java
+class Solution {
+    public int subarraysDivByK(int[] nums, int k) {
+        Map<Integer, Integer> record = new HashMap<Integer, Integer>();
+        record.put(0, 1);
+        int sum = 0, ans = 0;
+        for (int elem : nums) {
+            sum += elem;
+            // 注意 Java 取模的特殊性，当被除数为负数时取模结果为负数，需要纠正
+            int modulus = (sum % k + k) % k;
+            int same = record.getOrDefault(modulus, 0);
+            ans += same;
+            record.put(modulus, same + 1);
+        }
+        return ans;
+    }
+}
+```

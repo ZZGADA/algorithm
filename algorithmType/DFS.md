@@ -496,3 +496,57 @@ class Solution {
     }
 }
 ```
+--- 
+10. 多多的数字组合
+多多的数字组合
+多多君最近在研究某种数字组合：
+定义为：每个数字的十进制表示中(0~9)，每个数位各不相同且各个数位之和等于N。
+满足条件的数字可能很多，找到其中的最小值即可。
+多多君还有很多研究课题，于是多多君找到了你--未来的计算机科学家寻求帮助。
+
+```java
+import java.util.Scanner;
+import java.util.*;
+
+// 注意类名必须为 Main, 不要有任何 package xxx 信息
+public class Main {
+    public long res;
+    public static void main(String[] args) {
+        // 每个数位各不相同且各个数位之和等于N。
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        Set<Integer> set = new HashSet<>();
+        Main main = new Main();
+        main.res  = Long.MAX_VALUE;
+        main.judge(set, n, 0);
+        if(main.res == Long.MAX_VALUE){
+            main.res = -1;
+        }
+        System.out.println(main.res);
+    }
+
+    public void judge(Set<Integer> set, int n, long target) {
+        for (int i = 0; i < 10; i++) {
+            if (set.isEmpty() && i == 0) {
+                continue;
+            }
+            if (!set.contains(i)) {
+                long newtarget = target * 10 + i;
+                int newN = n - i;
+                if (newN < 0) {
+                    return;
+                }
+                if (newN == 0) {
+                    // 表示找到了
+                    res = Math.min(res, newtarget);
+                    return ;
+                } else {
+                    set.add(i);
+                    judge(set, newN, newtarget);
+                    set.remove(i);
+                }
+            }
+        }
+    }
+}
+```
