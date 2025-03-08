@@ -406,3 +406,147 @@ class Solution {
     }
 }
 ```
+
+--- 
+8. [寻找重复子树](https://leetcode.cn/problems/find-duplicate-subtrees/)
+```java
+class Solution {
+    Map<String, Integer> map = new HashMap<>();
+    List<TreeNode> ans = new ArrayList<>();
+
+    public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
+        dfs(root);
+        return ans;
+    }
+
+    // 将当前节点的结构记录下来
+    // 然后通过map判断当前结构是否存在
+
+    String dfs(TreeNode root) {
+        if (root == null)
+            return " ";
+        StringBuilder sb = new StringBuilder();
+        sb.append(root.val);
+        sb.append("_");
+        sb.append(dfs(root.left));
+        sb.append(dfs(root.right));
+
+        String key = sb.toString();
+        map.put(key,map.getOrDefault(key,0)+1);
+        if(map.get(key) == 2){
+            ans.add(root);
+        }
+
+        return key;
+    }
+}
+```
+--- 
+9. [验证回文子串](https://leetcode.cn/problems/valid-palindrome-ii/?envType=problem-list-v2&envId=greedy)
+1. 递归写法 
+```java
+class Solution {
+    public boolean validPalindrome(String s) {
+        return judge(s.toCharArray(), 0, s.length() - 1,false);
+    }
+
+    public boolean judge(char[] s, int left, int right,boolean flag) {
+        while (left <= right) {
+            if (s[left] == s[right]) {
+                left++;
+                right--;
+            } else {
+                // 边界情况
+                if(!flag){
+                    return judge(s,left+1,right,true) || judge(s,left,right-1,true);
+                }else{
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+}
+```
+2. 迭代写法
+```java
+class Solution {
+    boolean checkPalindrome(int left, int right, String s) {
+        while (left < right) {
+            if (s.charAt(left) != s.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+    public boolean validPalindrome(String s) {
+        int left = 0, right = s.length() - 1;
+        while (left < right) {
+            if (s.charAt(left) != s.charAt(right)) {
+                return checkPalindrome(left + 1, right, s) || checkPalindrome(left, right - 1, s);
+            }
+            left++;
+            right--;
+        }
+        return true;
+
+    }
+}
+```
+--- 
+10. 多多的数字组合
+多多的数字组合
+多多君最近在研究某种数字组合：
+定义为：每个数字的十进制表示中(0~9)，每个数位各不相同且各个数位之和等于N。
+满足条件的数字可能很多，找到其中的最小值即可。
+多多君还有很多研究课题，于是多多君找到了你--未来的计算机科学家寻求帮助。
+
+```java
+import java.util.Scanner;
+import java.util.*;
+
+// 注意类名必须为 Main, 不要有任何 package xxx 信息
+public class Main {
+    public long res;
+    public static void main(String[] args) {
+        // 每个数位各不相同且各个数位之和等于N。
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        Set<Integer> set = new HashSet<>();
+        Main main = new Main();
+        main.res  = Long.MAX_VALUE;
+        main.judge(set, n, 0);
+        if(main.res == Long.MAX_VALUE){
+            main.res = -1;
+        }
+        System.out.println(main.res);
+    }
+
+    public void judge(Set<Integer> set, int n, long target) {
+        for (int i = 0; i < 10; i++) {
+            if (set.isEmpty() && i == 0) {
+                continue;
+            }
+            if (!set.contains(i)) {
+                long newtarget = target * 10 + i;
+                int newN = n - i;
+                if (newN < 0) {
+                    return;
+                }
+                if (newN == 0) {
+                    // 表示找到了
+                    res = Math.min(res, newtarget);
+                    return ;
+                } else {
+                    set.add(i);
+                    judge(set, newN, newtarget);
+                    set.remove(i);
+                }
+            }
+        }
+    }
+}
+```

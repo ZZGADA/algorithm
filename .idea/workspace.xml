@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="新排版">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithmType/DFS.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/DFS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithmType/Greedy.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/Greedy.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithmType/PrefixSum.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/PrefixSum.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +61,7 @@
   "keyToString": {
     "Application.BFS.executor": "Run",
     "Application.BinarySearch.executor": "Debug",
+    "Application.Character.executor": "Run",
     "Application.Coins.executor": "Run",
     "Application.Day0914.executor": "Run",
     "Application.Day0917.executor": "Run",
@@ -70,7 +74,7 @@
     "Application.Grammar.executor": "Run",
     "Application.Greed.executor": "Run",
     "Application.KS.executor": "Run",
-    "Application.Main.executor": "Run",
+    "Application.Main.executor": "Debug",
     "Application.Matrix.executor": "Debug",
     "Application.MaxParentheses.executor": "Debug",
     "Application.MeiTuan.executor": "Run",
@@ -93,7 +97,11 @@
     "Application.XiaoMi.executor": "Run",
     "Application.Xiaomi.executor": "Run",
     "Application.ZhaoYing.executor": "Run",
+    "Application.org.example.JD.Main.executor": "Debug",
+    "Application.org.example.MT.Main.executor": "Debug",
+    "Application.verify.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -123,9 +131,9 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BinarySearch">
-    <configuration name="BinarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_14.BinarySearch" />
+  <component name="RunManager" selected="Application.org.example.MT.Main">
+    <configuration name="Character" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_14.Character" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
@@ -137,12 +145,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Greed" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_13.Greed" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.algorithm_13.*" />
+          <option name="PATTERN" value="org.example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -150,12 +158,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_13.KS" />
+    <configuration name="org.example.JD.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.JD.Main" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.algorithm_13.*" />
+          <option name="PATTERN" value="org.example.JD.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -163,12 +171,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaxParentheses" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_13.MaxParentheses" />
+    <configuration name="org.example.MT.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.MT.Main" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.algorithm_13.*" />
+          <option name="PATTERN" value="org.example.MT.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -176,12 +184,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TopK" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_13.TopK" />
+    <configuration name="verify" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_15.verify" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.algorithm_13.*" />
+          <option name="PATTERN" value="org.example.algorithm_15.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -191,11 +199,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BinarySearch" />
-        <item itemvalue="Application.KS" />
-        <item itemvalue="Application.Greed" />
-        <item itemvalue="Application.TopK" />
-        <item itemvalue="Application.MaxParentheses" />
+        <item itemvalue="Application.org.example.MT.Main" />
+        <item itemvalue="Application.org.example.JD.Main" />
+        <item itemvalue="Application.verify" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Character" />
       </list>
     </recent_temporary>
   </component>
@@ -310,7 +318,12 @@
       <workItem from="1739709077963" duration="719000" />
       <workItem from="1739771446125" duration="3952000" />
       <workItem from="1739864526942" duration="907000" />
-      <workItem from="1740202373033" duration="4817000" />
+      <workItem from="1740202373033" duration="5326000" />
+      <workItem from="1740400484243" duration="4272000" />
+      <workItem from="1740569522589" duration="1754000" />
+      <workItem from="1740733387376" duration="862000" />
+      <workItem from="1740963811570" duration="15959000" />
+      <workItem from="1741183245491" duration="11603000" />
     </task>
     <task id="LOCAL-00001" summary="算法阶段学习">
       <option name="closed" value="true" />
@@ -532,6 +545,41 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_14/BinarySearch.java</url>
           <line>24</line>
           <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_14/Character.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_15/verify.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_15/verify.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_15/verify.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_15/verify.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/JD/Main.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="58" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

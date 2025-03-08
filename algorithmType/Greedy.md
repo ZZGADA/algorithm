@@ -336,3 +336,144 @@ class Solution {
     }
 }
 ```
+--- 
+8. [划分字母区间](https://leetcode.cn/problems/partition-labels/description/?envType=problem-list-v2&envId=greedy)
+本质就是合并区间
+```java
+class Solution {
+    public List<Integer> partitionLabels(String S) {
+        // 本质是合并区间
+        char[] s = S.toCharArray();
+        int n = s.length;
+        int[] last = new int[26];
+        List<Integer> res = new ArrayList<>();
+
+        // 记录字符出现的最后一个位置
+        for (int i = 0; i < n; i++) {
+            last[s[i] - 'a'] = i;
+        }
+
+        // 记录最远合并区间的长度
+        int i, j, maxEdge = last[s[0] - 'a'];
+        for (i = 0, j = 0; j < n; j++) {
+            int index = s[j] - 'a';
+            if (j <= maxEdge) {
+                // 当前字符位置小于最大合并区间
+                maxEdge = Math.max(maxEdge, last[index]);
+            } else {
+                // 当前字符位置大于最大合并区间
+                res.add(j - i);
+                i = j;
+                maxEdge = last[index];
+            }
+        }
+        if (i != j) {
+            res.add(j - i);
+        }
+        return res;
+    }
+}
+```
+
+---
+9. 多多的字符变换
+多多君最近在研究字符串之间的变换，可以对字符串进行若干次变换操作:
+
+交换任意两个相邻的字符，代价为0。
+将任意一个字符a修改成字符b，代价为 |a - b|（绝对值）。
+现在有两个长度相同的字符串X和Y，多多君想知道，如果要将X和Y变成两个一样的字符串，需要的最少的代价之和是多少。    
+
+**示例1** 
+
+```text
+输入例子：
+4
+abca
+abcd
+输出例子：
+3
+例子说明：
+其中一种代价最小的变换方案：
+都修改为abcd，那么将第一个字符串X最后一个字符a修改为d，代价为|a - d| = 3。
+```   
+ 
+**示例2**   
+```text
+输入例子：
+        4
+baaa
+        aabb
+输出例子：
+        1
+例子说明：
+其中一种代价最小的变换方案：
+首先将第一个字符串通过交换相邻的字符：baaa -> abaa -> aaba，代价为0。
+然后将第二个字符串修改最后一个字符b：|b - a| = 1。
+两个字符都修改为aaba，所以最小的总代价为1。
+```
+
+
+```java
+import java.util.Scanner;
+import java.util.Arrays;
+
+// 注意类名必须为 Main, 不要有任何 package xxx 信息
+public class Main {
+    int minCost;
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = Integer.parseInt(in.nextLine().trim());
+        char[] up = in.nextLine().trim().toCharArray();
+        char[] down = in.nextLine().trim().toCharArray();
+        Arrays.sort(up);
+        Arrays.sort(down);
+
+        Main main = new Main();
+        main.minCost = Integer.MAX_VALUE;
+        main.judge(up, down, 0, n, 0);
+        System.out.println(main.minCost);
+    }
+
+    public void judge(char[] up, char[] down, int index, int n, int cost) {
+        if (index >= n) {
+            minCost = Math.min(minCost, cost);
+            return ;
+        }
+
+        if (up[index] == down[index]) {
+            judge(up, down, index + 1, n, cost);
+            return ;
+        }
+
+        // 直接替换的情况
+        int replaceCost = cost + Math.abs(down[index] - up[index]);
+        judge(up, down, index + 1, n, replaceCost);
+
+        // 前后交换的情况
+        // if (index < n - 1) {
+        //     // 交换 up[index] 和 up[index + 1]
+        //     if (up[index + 1] == down[index]) {
+        //         swap(up, index, index + 1);
+        //         judge(up, down, index + 1, n, cost);
+        //         swap(up, index, index + 1); // 恢复状态
+        //     }
+        // 
+        //     if (down[index + 1] == up[index]) {
+        //         // 交换 down[index] 和 down[index + 1]
+        //         swap(down, index, index + 1);
+        //         judge(up, down, index + 1, n, cost);
+        //         swap(down, index, index + 1); // 恢复状态
+        //     }
+        // }
+
+        return ;
+    }
+    // 交换字符数组中两个位置的字符
+    private void swap(char[] arr, int i, int j) {
+        char temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+}
+```
