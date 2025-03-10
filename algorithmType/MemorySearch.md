@@ -277,3 +277,38 @@ class Solution {
     }
 }
 ```
+--- 
+9. [交错字符串](https://leetcode.cn/problems/interleaving-string/description/?envType=problem-list-v2&envId=dynamic-programming)
+```java
+class Solution {
+    public boolean isInterleave(String s1, String s2, String s3) {
+        int n = s1.length();
+        int m = s2.length();
+        if (n + m != s3.length()) {
+            return false;
+        }
+
+        int[][] memo = new int[n + 1][m + 1];
+        for (int[] row : memo) {
+            Arrays.fill(row, -1); // -1 表示没有计算过
+        }
+        return dfs(s1.toCharArray(),s2.toCharArray(),s3.toCharArray(),n-1,m-1,memo);
+    }
+
+    // 表示 s3[:i+j+2] 能否由 s1[:i+1] 和 s2[:j+1] 交错组成
+    public boolean dfs(char[] s1, char[] s2, char[] s3, int i, int j, int[][] memo) {
+        if (i < 0 && j < 0) {
+            return true;
+        }
+
+        if(memo[i+1][j+1] != -1){
+            return memo[i+1][j+1] == 1 ;
+        }
+
+        boolean res = (i>=0 && s1[i] == s3[i+j+1] && dfs(s1,s2,s3,i-1,j,memo)) ||
+                      (j>=0 && s2[j] == s3[i+j+1] && dfs(s1,s2,s3,i,j-1,memo));
+        memo[i+1][j+1] = res ? 1:0;
+        return res;
+    }
+}
+```
