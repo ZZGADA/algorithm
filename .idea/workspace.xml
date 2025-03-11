@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="新排版">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algorithmType/MemorySearch.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/MemorySearch.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -323,7 +322,7 @@
       <workItem from="1740569522589" duration="1754000" />
       <workItem from="1740733387376" duration="862000" />
       <workItem from="1740963811570" duration="15959000" />
-      <workItem from="1741183245491" duration="24822000" />
+      <workItem from="1741183245491" duration="25142000" />
     </task>
     <task id="LOCAL-00001" summary="算法阶段学习">
       <option name="closed" value="true" />

@@ -333,6 +333,7 @@ class Solution {
     }
 
     // 考虑前 i 个元素，选择 k 个建筑，结尾字符为 lastChoice 的总方案数
+    // 如果选择了当前建筑物，还需要选择choiceNum的组合数
     public long dfs(int i, int choiceNum, int lastChoice, long[][][] memo, char[] s) {
         if (choiceNum == 0) {
             return 1;
