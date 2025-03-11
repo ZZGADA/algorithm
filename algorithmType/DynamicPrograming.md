@@ -770,7 +770,7 @@ class Solution {
 }
 ```
 --- 
-20. [交错字符串]()
+20. [交错字符串](https://leetcode.cn/problems/interleaving-string/description/?envType=problem-list-v2&envId=dynamic-programming)
 ```java
 class Solution {
     public boolean isInterleave(String S1, String S2, String S3) {
@@ -805,6 +805,50 @@ class Solution {
         }
 
         return f[n][m];
+    }
+}
+```
+21. [1和0](https://leetcode.cn/problems/ones-and-zeroes/description/?envType=problem-list-v2&envId=dynamic-programming)
+```java
+class Node {
+    int zeorNum;
+    int oneNum;
+
+    Node(int zeorNum, int oneNum) {
+        this.zeorNum = zeorNum;
+        this.oneNum = oneNum;
+    }
+}
+
+class Solution {
+
+    public int findMaxForm(String[] strs, int m, int n) {
+        List<Node> list = new ArrayList<>();
+        int N = strs.length;
+        for (String s : strs) {
+            int count = 0;
+            for (int i = 0; i < s.length(); i++) {
+                if (s.charAt(i) == '1') {
+                    count++;
+                }
+            }
+            Node node = new Node(s.length() - count, count);
+            list.add(node);
+        }
+        // 一个子序列问题
+        // dp[i][j] 表示 考虑使用 i个0 和 j个1 能组成的最大子集
+        int[][] dp = new int[m + 1][n + 1];
+        for (Node node : list) {
+            int nz = node.zeorNum;
+            int no = node.oneNum;
+            for (int i = m; i >= nz; i--) {
+                for (int j = n; j >= no; j--) {
+                    dp[i][j] = Math.max(dp[i][j], dp[i - nz][j - no] + 1);
+                }
+            }
+        }
+
+        return dp[m][n];
     }
 }
 ```

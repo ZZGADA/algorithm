@@ -87,6 +87,7 @@
     "Application.Oct21.executor": "Run",
     "Application.Pdd.executor": "Run",
     "Application.Solution.executor": "Run",
+    "Application.Solution_1.executor": "Debug",
     "Application.StringEncoding.executor": "Run",
     "Application.ThreeSum.executor": "Run",
     "Application.TopK.executor": "Debug",
@@ -130,7 +131,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Solution_1">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="algorithm" />
@@ -146,6 +147,19 @@
     </configuration>
     <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.algorithm_16.Solution" />
+      <module name="algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.algorithm_16.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Solution_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_16.Solution_1" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
@@ -183,26 +197,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="verify" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_15.verify" />
-      <module name="algorithm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.algorithm_15.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Solution_1" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Solution" />
         <item itemvalue="Application.org.example.MT.Main" />
         <item itemvalue="Application.org.example.JD.Main" />
-        <item itemvalue="Application.verify" />
       </list>
     </recent_temporary>
   </component>
@@ -322,7 +323,7 @@
       <workItem from="1740569522589" duration="1754000" />
       <workItem from="1740733387376" duration="862000" />
       <workItem from="1740963811570" duration="15959000" />
-      <workItem from="1741183245491" duration="19652000" />
+      <workItem from="1741183245491" duration="22905000" />
     </task>
     <task id="LOCAL-00001" summary="算法阶段学习">
       <option name="closed" value="true" />
@@ -587,8 +588,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>36</line>
+          <line>23</line>
           <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_16/Solution_1.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="64" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
