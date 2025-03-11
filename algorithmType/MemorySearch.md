@@ -312,3 +312,48 @@ class Solution {
     }
 }
 ```
+
+10. [建筑物选择]()
+```java
+class Solution {
+    public long numberOfWays(String S) {
+        int n = S.length();
+        char[] s = S.toCharArray();
+        int k = 3;
+        // memo[i][j][l] 表示考虑前 i 个元素，选择 j 个建筑，结尾字符为 l 的方案数
+        long[][][] memo = new long[n][k + 1][2];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= k; j++) {
+                for (int l = 0; l < 2; l++) {
+                    memo[i][j][l] = -1;
+                }
+            }
+        }
+        return dfs(n - 1, k, -1, memo, s);
+    }
+
+    // 考虑前 i 个元素，选择 k 个建筑，结尾字符为 lastChoice 的总方案数
+    public long dfs(int i, int choiceNum, int lastChoice, long[][][] memo, char[] s) {
+        if (choiceNum == 0) {
+            return 1;
+        }
+        if (i < 0) {
+            return 0;
+        }
+        int current = s[i] - '0';
+        if (lastChoice != -1 && memo[i][choiceNum][lastChoice] != -1) {
+            return memo[i][choiceNum][lastChoice];
+        }
+        // 不选当前元素
+        long result = dfs(i - 1, choiceNum, lastChoice, memo, s);
+        // 选当前元素
+        if (lastChoice == -1 || lastChoice != current) {
+            result += dfs(i - 1, choiceNum - 1, current, memo, s);
+        }
+        if (lastChoice != -1) {
+            memo[i][choiceNum][lastChoice] = result;
+        }
+        return result;
+    }
+}
+```

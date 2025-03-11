@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="新排版">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithmType/DynamicPrograming.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/DynamicPrograming.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithmType/MemorySearch.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/MemorySearch.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,7 +323,7 @@
       <workItem from="1740569522589" duration="1754000" />
       <workItem from="1740733387376" duration="862000" />
       <workItem from="1740963811570" duration="15959000" />
-      <workItem from="1741183245491" duration="22905000" />
+      <workItem from="1741183245491" duration="24822000" />
     </task>
     <task id="LOCAL-00001" summary="算法阶段学习">
       <option name="closed" value="true" />
@@ -590,11 +590,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
           <line>23</line>
           <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_16/Solution_1.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="64" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
