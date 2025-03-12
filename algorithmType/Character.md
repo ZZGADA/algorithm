@@ -167,3 +167,66 @@ class Solution {
 }
 ```
 ---- 
+
+
+4. [分割回文字符串](https://leetcode.cn/problems/palindrome-partitioning/)
+```java
+class Solution {
+    List<List<String>> res;
+
+    public List<List<String>> partition(String s) {
+        res = new ArrayList<>();
+        judge(s, 0, 1, new ArrayList<>(), 0);
+
+        return res;
+    }
+
+    public void judge(String s, int i, int j, List<String> memory, int lsLength) {
+        if (j > s.length()) {
+            if (lsLength == s.length()) {
+                // 表示分完了 是一种可行的分割方式
+                res.add(new ArrayList<>(memory));
+            }
+            return;
+        }
+
+        // 两种可能 是否截取substring 然后丢到memory中
+        String subS = s.substring(i, j);
+        if (ifPalindrome(subS)) {
+            memory.add(subS);
+            lsLength += subS.length();
+            judge(s, j, j + 1, memory, lsLength);
+            memory.remove(memory.size() - 1);
+            lsLength -= subS.length();
+        }
+
+        judge(s, i, j + 1, memory, lsLength);
+    }
+
+
+    // 判断是否是回文字符串
+    public boolean ifPalindrome(String s) {
+        int n = s.length();
+        int mid = n / 2, i = mid, j = mid;
+        if (n == 0) {
+            return true;
+        }
+        while (j < n && s.charAt(j) == s.charAt(i)) {
+            j++;
+        }
+        j--;
+
+        while (i >= 0 && s.charAt(i) == s.charAt(j)) {
+            i--;
+        }
+        j++;
+
+        while (i >= 0 && j < n && s.charAt(i) == s.charAt(j)) {
+            i--;
+            j++;
+        }
+
+        return i < 0 && j >= n;
+    }
+}
+```

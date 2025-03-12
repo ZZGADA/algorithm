@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="新排版">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithmType/DFS.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/DFS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithmType/Greedy.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/Greedy.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithmType/PrefixSum.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/PrefixSum.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithmType/MemorySearch.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/MemorySearch.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +85,8 @@
     "Application.Oct13.executor": "Run",
     "Application.Oct21.executor": "Run",
     "Application.Pdd.executor": "Run",
+    "Application.Solution.executor": "Run",
+    "Application.Solution_1.executor": "Debug",
     "Application.StringEncoding.executor": "Run",
     "Application.ThreeSum.executor": "Run",
     "Application.TopK.executor": "Debug",
@@ -112,7 +111,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "configurable.group.editor",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -131,13 +130,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.org.example.MT.Main">
-    <configuration name="Character" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_14.Character" />
+  <component name="RunManager" selected="Application.Solution_1">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.algorithm_14.*" />
+          <option name="PATTERN" value="org.example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -145,12 +144,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_16.Solution" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.algorithm_16.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Solution_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_16.Solution_1" />
+      <module name="algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.algorithm_16.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -184,26 +196,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="verify" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_15.verify" />
-      <module name="algorithm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.algorithm_15.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Solution_1" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Solution" />
         <item itemvalue="Application.org.example.MT.Main" />
         <item itemvalue="Application.org.example.JD.Main" />
-        <item itemvalue="Application.verify" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Character" />
       </list>
     </recent_temporary>
   </component>
@@ -323,7 +322,7 @@
       <workItem from="1740569522589" duration="1754000" />
       <workItem from="1740733387376" duration="862000" />
       <workItem from="1740963811570" duration="15959000" />
-      <workItem from="1741183245491" duration="11603000" />
+      <workItem from="1741183245491" duration="25142000" />
     </task>
     <task id="LOCAL-00001" summary="算法阶段学习">
       <option name="closed" value="true" />
@@ -552,11 +551,6 @@
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>9</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/algorithm_15/verify.java</url>
           <line>57</line>
           <option name="timeStamp" value="51" />
@@ -580,6 +574,21 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/example/JD/Main.java</url>
           <line>26</line>
           <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/MT/Main.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/MT/Main.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="62" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

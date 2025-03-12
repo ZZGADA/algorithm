@@ -277,3 +277,84 @@ class Solution {
     }
 }
 ```
+--- 
+9. [交错字符串](https://leetcode.cn/problems/interleaving-string/description/?envType=problem-list-v2&envId=dynamic-programming)
+```java
+class Solution {
+    public boolean isInterleave(String s1, String s2, String s3) {
+        int n = s1.length();
+        int m = s2.length();
+        if (n + m != s3.length()) {
+            return false;
+        }
+
+        int[][] memo = new int[n + 1][m + 1];
+        for (int[] row : memo) {
+            Arrays.fill(row, -1); // -1 表示没有计算过
+        }
+        return dfs(s1.toCharArray(),s2.toCharArray(),s3.toCharArray(),n-1,m-1,memo);
+    }
+
+    // 表示 s3[:i+j+2] 能否由 s1[:i+1] 和 s2[:j+1] 交错组成
+    public boolean dfs(char[] s1, char[] s2, char[] s3, int i, int j, int[][] memo) {
+        if (i < 0 && j < 0) {
+            return true;
+        }
+
+        if(memo[i+1][j+1] != -1){
+            return memo[i+1][j+1] == 1 ;
+        }
+
+        boolean res = (i>=0 && s1[i] == s3[i+j+1] && dfs(s1,s2,s3,i-1,j,memo)) ||
+                      (j>=0 && s2[j] == s3[i+j+1] && dfs(s1,s2,s3,i,j-1,memo));
+        memo[i+1][j+1] = res ? 1:0;
+        return res;
+    }
+}
+```
+
+10. [建筑物选择]()
+```java
+class Solution {
+    public long numberOfWays(String S) {
+        int n = S.length();
+        char[] s = S.toCharArray();
+        int k = 3;
+        // memo[i][j][l] 表示考虑前 i 个元素，选择 j 个建筑，结尾字符为 l 的方案数
+        long[][][] memo = new long[n][k + 1][2];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= k; j++) {
+                for (int l = 0; l < 2; l++) {
+                    memo[i][j][l] = -1;
+                }
+            }
+        }
+        return dfs(n - 1, k, -1, memo, s);
+    }
+
+    // 考虑前 i 个元素，选择 k 个建筑，结尾字符为 lastChoice 的总方案数
+    // 如果选择了当前建筑物，还需要选择choiceNum的组合数
+    public long dfs(int i, int choiceNum, int lastChoice, long[][][] memo, char[] s) {
+        if (choiceNum == 0) {
+            return 1;
+        }
+        if (i < 0) {
+            return 0;
+        }
+        int current = s[i] - '0';
+        if (lastChoice != -1 && memo[i][choiceNum][lastChoice] != -1) {
+            return memo[i][choiceNum][lastChoice];
+        }
+        // 不选当前元素
+        long result = dfs(i - 1, choiceNum, lastChoice, memo, s);
+        // 选当前元素
+        if (lastChoice == -1 || lastChoice != current) {
+            result += dfs(i - 1, choiceNum - 1, current, memo, s);
+        }
+        if (lastChoice != -1) {
+            memo[i][choiceNum][lastChoice] = result;
+        }
+        return result;
+    }
+}
+```

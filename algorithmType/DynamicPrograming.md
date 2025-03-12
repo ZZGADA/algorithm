@@ -736,3 +736,119 @@ class Solution {
     }
 }
 ```
+
+---- 
+19. [买卖股票的最佳时机IV](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/description/)
+```java
+class Solution {
+    public int maxProfit(int k, int[] prices) {
+        int n = prices.length;
+        int[][][] dp = new int[n][k + 1][2]; // 0 卖 1 买
+        
+         // 初始化
+        for (int j = 0; j <= k; j++) {
+            if (j == 1) {
+                dp[0][j][1] = -prices[0];
+            } else {
+                dp[0][j][1] = Integer.MIN_VALUE;
+            }
+        }
+
+        for (int i = 1; i < n; i++) {
+            for (int j = 1; j <= k ; j++) {
+                dp[i][j][0] = Math.max(dp[i-1][j][0],dp[i-1][j][1] + prices[i]);
+                dp[i][j][1] = Math.max(dp[i-1][j][1],dp[i-1][j-1][0] - prices[i]);
+            }
+        } 
+
+        int res = 0;
+        for(int i = 1;i<=k;i++){
+            res = Math.max(res,dp[n-1][i][0]);
+        }
+        return res;
+    }
+}
+```
+--- 
+20. [交错字符串](https://leetcode.cn/problems/interleaving-string/description/?envType=problem-list-v2&envId=dynamic-programming)
+```java
+class Solution {
+    public boolean isInterleave(String S1, String S2, String S3) {
+        int n = S1.length();
+        int m = S2.length();
+        int g = S3.length();
+        if (n + m != g) {
+            return false;
+        }
+
+        char[] s1 = S1.toCharArray();
+        char[] s2 = S2.toCharArray();
+        char[] s3 = S3.toCharArray();
+
+        // f[i][j] 来表示 S1 的前 i 个字符和 S2 的前 j 个字符是否能够交错组成 S3 的前 i + j 个字符。
+        boolean[][] f = new boolean[n + 1][m + 1];
+        f[0][0] = true;
+
+        // 假设 s1 为空
+        for (int j = 0; j < m; j++) {
+            f[0][j + 1] = s2[j] == s3[j] && f[0][j];
+        }
+
+        for (int i = 0; i < n; i++) {
+            // 要假设 s2为空
+            f[i + 1][0] = s1[i] == s3[i] && f[i][0];
+            for (int j = 0; j < m; j++) {
+                f[i + 1][j + 1] = 
+                s1[i] == s3[i + j + 1] && f[i][j + 1] ||
+                        s2[j] == s3[i + j + 1] && f[i + 1][j];
+            }
+        }
+
+        return f[n][m];
+    }
+}
+```
+21. [1和0](https://leetcode.cn/problems/ones-and-zeroes/description/?envType=problem-list-v2&envId=dynamic-programming)
+```java
+class Node {
+    int zeorNum;
+    int oneNum;
+
+    Node(int zeorNum, int oneNum) {
+        this.zeorNum = zeorNum;
+        this.oneNum = oneNum;
+    }
+}
+
+class Solution {
+
+    public int findMaxForm(String[] strs, int m, int n) {
+        List<Node> list = new ArrayList<>();
+        int N = strs.length;
+        for (String s : strs) {
+            int count = 0;
+            for (int i = 0; i < s.length(); i++) {
+                if (s.charAt(i) == '1') {
+                    count++;
+                }
+            }
+            Node node = new Node(s.length() - count, count);
+            list.add(node);
+        }
+        // 一个子序列问题
+        // dp[i][j] 表示 考虑使用 i个0 和 j个1 能组成的最大子集
+        int[][] dp = new int[m + 1][n + 1];
+        for (Node node : list) {
+            int nz = node.zeorNum;
+            int no = node.oneNum;
+            for (int i = m; i >= nz; i--) {
+                for (int j = n; j >= no; j--) {
+                    dp[i][j] = Math.max(dp[i][j], dp[i - nz][j - no] + 1);
+                }
+            }
+        }
+
+        return dp[m][n];
+    }
+}
+```
