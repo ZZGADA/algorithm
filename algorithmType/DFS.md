@@ -550,3 +550,33 @@ public class Main {
     }
 }
 ```
+
+11. [省份数量](https://leetcode.cn/problems/bLyHh0/description/)
+```java
+class Solution {
+    public int findCircleNum(int[][] isConnected) {
+        int n = isConnected.length;
+        boolean[] remember = new boolean[n];
+        int res = 0;
+        for (int i = 0; i < n; i++) {
+            if(!remember[i]){
+                res++;
+            }
+            dfs(isConnected, remember, i, n);
+        }
+        return res;
+    }
+
+    public void dfs(int[][] isConnected, boolean[] remember, int i, int n) {
+        if (!remember[i]) {
+            remember[i] = true;
+        }
+
+        for (int j = 0; j < n; j++) {
+            if (!remember[j] && isConnected[i][j] == 1) {
+                dfs(isConnected, remember, j, n);
+            }
+        }
+    }
+}
+```
