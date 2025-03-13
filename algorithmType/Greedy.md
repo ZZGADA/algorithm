@@ -477,3 +477,28 @@ public class Main {
 
 }
 ```
+
+--- 
+10. [分发饼干](https://leetcode.cn/problems/assign-cookies/description/?envType=problem-list-v2&envId=greedy)
+```java
+class Solution {
+    public int findContentChildren(int[] g, int[] s) {
+        Arrays.sort(s);
+        Arrays.sort(g);
+        int count = 0;
+        int j = 0;
+        for(int i = 0; i < g.length; i++){
+            while(j < s.length){
+                if(s[j] >= g[i]){
+                    count++;
+                    j++;
+                    break;
+                }
+                j++;
+            }
+            if(j >= s.length) break;
+        }
+        return count;
+    }
+}
+```

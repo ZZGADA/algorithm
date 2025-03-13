@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="新排版">
-      <change beforePath="$PROJECT_DIR$/algorithmType/MemorySearch.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/MemorySearch.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +69,7 @@
     "Application.Dec8.executor": "Run",
     "Application.DiDI.executor": "Run",
     "Application.Grammar.executor": "Run",
+    "Application.Gramme.executor": "Run",
     "Application.Greed.executor": "Run",
     "Application.KS.executor": "Run",
     "Application.Main.executor": "Debug",
@@ -98,6 +99,7 @@
     "Application.ZhaoYing.executor": "Run",
     "Application.org.example.JD.Main.executor": "Debug",
     "Application.org.example.MT.Main.executor": "Debug",
+    "Application.org.example.XM.Main.executor": "Run",
     "Application.verify.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -130,7 +132,20 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Solution_1">
+  <component name="RunManager" selected="Application.org.example.XM.Main">
+    <configuration name="Gramme" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.gramma.Gramme" />
+      <module name="algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.gramma.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="algorithm" />
@@ -170,25 +185,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="org.example.JD.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.JD.Main" />
+    <configuration name="org.example.XM.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.XM.Main" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.JD.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="org.example.MT.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.MT.Main" />
-      <module name="algorithm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.MT.*" />
+          <option name="PATTERN" value="org.example.XM.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -198,11 +200,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.org.example.XM.Main" />
+        <item itemvalue="Application.Gramme" />
         <item itemvalue="Application.Solution_1" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Solution" />
-        <item itemvalue="Application.org.example.MT.Main" />
-        <item itemvalue="Application.org.example.JD.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -322,7 +324,7 @@
       <workItem from="1740569522589" duration="1754000" />
       <workItem from="1740733387376" duration="862000" />
       <workItem from="1740963811570" duration="15959000" />
-      <workItem from="1741183245491" duration="25142000" />
+      <workItem from="1741183245491" duration="34053000" />
     </task>
     <task id="LOCAL-00001" summary="算法阶段学习">
       <option name="closed" value="true" />
@@ -584,11 +586,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/example/MT/Main.java</url>
           <line>23</line>
           <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="62" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
