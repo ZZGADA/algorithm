@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1c2399a3-3514-4d3e-bf28-50209a23f70e" name="Changes" comment="新排版">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithmType/DFS.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmType/DFS.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +86,7 @@
     "Application.Oct13.executor": "Run",
     "Application.Oct21.executor": "Run",
     "Application.Pdd.executor": "Run",
-    "Application.Solution.executor": "Run",
+    "Application.Solution.executor": "Debug",
     "Application.Solution_1.executor": "Debug",
     "Application.StringEncoding.executor": "Run",
     "Application.ThreeSum.executor": "Run",
@@ -100,6 +99,7 @@
     "Application.ZhaoYing.executor": "Run",
     "Application.org.example.JD.Main.executor": "Debug",
     "Application.org.example.MT.Main.executor": "Debug",
+    "Application.org.example.WY.Main.executor": "Debug",
     "Application.org.example.XM.Main.executor": "Run",
     "Application.verify.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -114,7 +114,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -133,7 +133,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.org.example.XM.Main">
+  <component name="RunManager" selected="Application.Solution">
     <configuration name="Gramme" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.gramma.Gramme" />
       <module name="algorithm" />
@@ -147,25 +147,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
-      <module name="algorithm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.algorithm_16.Solution" />
+      <option name="MAIN_CLASS_NAME" value="org.example.WY.Solution" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.algorithm_16.*" />
+          <option name="PATTERN" value="org.example.WY.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -179,6 +166,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.algorithm_16.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="org.example.WY.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.WY.Main" />
+      <module name="algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.WY.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -201,11 +201,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Solution" />
+        <item itemvalue="Application.org.example.WY.Main" />
         <item itemvalue="Application.org.example.XM.Main" />
         <item itemvalue="Application.Gramme" />
         <item itemvalue="Application.Solution_1" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Solution" />
       </list>
     </recent_temporary>
   </component>
@@ -325,7 +325,10 @@
       <workItem from="1740569522589" duration="1754000" />
       <workItem from="1740733387376" duration="862000" />
       <workItem from="1740963811570" duration="15959000" />
-      <workItem from="1741183245491" duration="35699000" />
+      <workItem from="1741183245491" duration="36380000" />
+      <workItem from="1741938498187" duration="4849000" />
+      <workItem from="1742996665113" duration="4000" />
+      <workItem from="1753663873315" duration="743000" />
     </task>
     <task id="LOCAL-00001" summary="算法阶段学习">
       <option name="closed" value="true" />
@@ -587,6 +590,31 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/example/MT/Main.java</url>
           <line>23</line>
           <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/WY/Main.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/WY/Main.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/WY/Main.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/WY/Main.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/WY/Solution.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="67" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -143,3 +143,43 @@ class Solution {
 }
 ```
 
+--- 
+4. 有效括号 [有效括号](https://leetcode.cn/problems/valid-parentheses/description/?envType=study-plan-v2&envId=top-100-liked)  
+   思路：使用栈来维护括号的匹配关系。遇到左括号就入栈，遇到右括号就出栈并检查是否匹配。
+```go
+package main
+
+func main() {
+    
+}
+
+func isValid(s string) bool {
+   target := map[rune]rune{
+      ')': '(',
+      ']': '[',
+      '}': '{',
+   }
+
+   stack := make([]rune, 0)
+   for _, char := range s {
+      if len(stack) == 0 {
+         stack = append(stack, char)
+         continue
+      }
+
+      if char == ')' || char == ']' || char == '}' {
+         if stack[len(stack)-1] == target[char] {
+            stack = stack[:len(stack)-1] // pop
+         } else {
+            return false
+         }
+      } else {
+         // 如果是左括号，直接入栈
+         stack = append(stack, char)
+      }
+   }
+
+   return len(stack) == 0
+}
+
+```
