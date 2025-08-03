@@ -183,3 +183,116 @@ func isValid(s string) bool {
 }
 
 ```
+
+--- 
+5. 中序遍历 [中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/?envType=problem-list-v2&envId=stack) 
+```go
+package main
+
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
+func inorderTraversal(root *TreeNode) []int {
+	stack := []*TreeNode{}
+	res := make([]int, 0)
+	// 非空判断
+	for root != nil || len(stack) > 0 {
+		// 非空判断
+		// 节点全部入队
+		for root != nil {
+			stack = append(stack, root)
+			root = root.Left
+		}
+
+		// 抛出节点
+		// 获取中序遍历 结点 然后向右遍历
+		root = stack[len(stack)-1]
+		stack = stack[:len(stack)-1] // pop
+		res = append(res, root.Val)
+		root = root.Right
+	}
+	return res
+}
+
+```
+
+---- 
+6. 二叉树展开为链表 [二叉树展开为链表](https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/?envType=problem-list-v2&envId=stack)
+```go
+
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func flatten(root *TreeNode) {
+    curr := root
+    for curr != nil {
+        if curr.Left != nil {
+            next := curr.Left
+            predecessor := next
+
+            // 寻找最右边节点
+            for predecessor.Right != nil {
+            predecessor = predecessor.Right
+            }
+
+            // 左子树最右结点 指向当前结点的右结点
+            predecessor.Right = curr.Right
+            
+            // 将左子树移动到右边
+            curr.Left, curr.Right = nil, next
+		}
+
+      // 继续遍历左子树剩余未遍历的部分
+      curr = curr.Right
+	}
+}
+
+```
+
+--- 
+7. 后缀逻辑计算 []()
+```go
+func evalRPN(tokens []string) int {
+   stack := make([]int, 0)
+   size := len(tokens)
+   m := map[string]string{
+       "+": "+",
+       "-": "-",
+	   "*": "*",
+      "/": "/",
+   }
+   
+   for i := 0; i < size; i++ {
+      // 如果操作符合存在
+      if ope, ok := m[tokens[i]]; ok {
+         opr := 0
+         op2, op1 := stack[len(stack)-2], stack[len(stack)-1]
+         stack = stack[:len(stack)-2]
+         switch ope {
+         case "+":
+         opr = op2 + op1
+         case "-":
+         opr = op2 - op1
+         case "*":
+         opr = op2 * op1
+         case "/":
+         opr = op2 / op1
+        }
+        stack = append(stack, opr)
+      } else {
+        opr, _ := strconv.Atoi(tokens[i])
+        stack = append(stack, opr)
+      }
+   }
+
+    return stack[len(stack)-1]
+}
+```
