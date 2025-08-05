@@ -24,7 +24,7 @@
         <entry key="file://$PROJECT_DIR$/algorithm_go/inorderTraversal.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1754217645074" />
+              <option name="lastModified" value="1754356086218" />
               <option name="schema">
                 <list>
                   <option value="TreeNode" />
@@ -62,7 +62,7 @@
         <entry key="file://$PROJECT_DIR$/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1754217716803" />
+              <option name="lastModified" value="1754218496444" />
             </ScannedPath>
           </value>
         </entry>
@@ -74,6 +74,6 @@
         <entry key="tree_node" value="TreeNode" />
       </map>
     </option>
-    <option name="lastTimeChecked" value="1754216389817" />
+    <option name="lastTimeChecked" value="1754354032475" />
   </component>
 </project>
