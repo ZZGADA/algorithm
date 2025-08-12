@@ -24,7 +24,7 @@
         <entry key="file://$PROJECT_DIR$/algorithm_go/inorderTraversal.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1754356086218" />
+              <option name="lastModified" value="1754959538772" />
               <option name="schema">
                 <list>
                   <option value="TreeNode" />
@@ -62,7 +62,14 @@
         <entry key="file://$PROJECT_DIR$/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1754218496444" />
+              <option name="lastModified" value="1754961705232" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file:///var/folders/6x/thjcvb1d7bb7vlz1qzgyyf4h0000gn/T/leetcode/editor/cn/[71]简化路径.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1754961067455" />
             </ScannedPath>
           </value>
         </entry>
@@ -74,6 +81,6 @@
         <entry key="tree_node" value="TreeNode" />
       </map>
     </option>
-    <option name="lastTimeChecked" value="1754354032475" />
+    <option name="lastTimeChecked" value="1754958718311" />
   </component>
 </project>
