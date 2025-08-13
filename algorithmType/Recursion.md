@@ -81,3 +81,50 @@ class Solution {
     }
 }
 ```
+
+--- 
+
+
+2. [组合数字](https://leetcode.cn/problems/combination-sum-ii/description/)
+```go
+func combinationSum3(candidates []int, target int) [][]int {
+	sort.Ints(candidates)
+	res := make([][]int, 0)
+	size := len(candidates)
+	var dfs func(flag int, cnt int, tmp []int)
+
+	// 本质上是一个递归树
+	// 然后进行选和不选
+	// 选的时候要过滤掉和当前元素一样的情况，因为同一个开头的树可能会有同样的组合
+	dfs = func(flag int, cnt int, tmp []int) {
+		if cnt == target {
+			t := append([]int(nil), tmp...)
+			res = append(res, t)
+			return
+		}
+
+		if cnt > target || flag >= size {
+			return
+		}
+
+		// 选
+		tmp = append(tmp, candidates[flag])
+		cnt += candidates[flag]
+		dfs(flag+1, cnt, tmp)
+
+		// 回溯
+		cnt -= candidates[flag]
+		tmp = tmp[:len(tmp)-1]
+
+		// 不选
+		flag++
+		for flag < size && candidates[flag] == candidates[flag-1] {
+			flag++
+		}
+		dfs(flag, cnt, tmp)
+	}
+
+	dfs(0, 0, []int{})
+	return res
+}
+```
