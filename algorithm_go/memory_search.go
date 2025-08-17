@@ -1,6 +1,6 @@
 package algorithm_go
 
-func wordBreak(s string, wordDict []string) bool {
+func wordBreakMemorySearch(s string, wordDict []string) bool {
 	maxLen := 0
 	words := make(map[string]bool, len(wordDict))
 	for _, w := range wordDict {

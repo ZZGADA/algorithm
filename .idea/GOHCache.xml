@@ -24,12 +24,19 @@
         <entry key="file://$PROJECT_DIR$/algorithm_go/inorderTraversal.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1755133254956" />
+              <option name="lastModified" value="1755134086945" />
               <option name="schema">
                 <list>
                   <option value="TreeNode" />
                 </list>
               </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/algorithm_go/memory_search.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1755134086922" />
             </ScannedPath>
           </value>
         </entry>
