@@ -4,15 +4,16 @@ import (
 	"strings"
 )
 
+import (
+	"bufio"
+	"os"
+)
+
 func main() {
+	reader := bufio.NewReader(os.Stdin)
+	readString, _ := reader.ReadString('\n')
+	readString = readString[:len(readString)-1]
 
-	// 自定义排序
-	//gramma_learning.SortSelfDefine()
-
-	// 字符串和字节的转换
-	//gramma_learning.ByteAndRune()
-
-	simplifyPath("/home/user/Documents/../Pictures")
 }
 
 func simplifyPath(path string) string {

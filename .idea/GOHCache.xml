@@ -3,6 +3,13 @@
   <component name="GoORMHelperCache">
     <option name="schemaMapping">
       <map>
+        <entry key="ListNode">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/algorithm_go/list.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="Person">
           <value>
             <set>
@@ -40,10 +47,29 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/algorithm_go/list.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1755653070309" />
+              <option name="schema">
+                <list>
+                  <option value="ListNode" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/algorithm_go/memory_search.go">
           <value>
             <ScannedPath>
               <option name="lastModified" value="1755393131924" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/algorithm_go/strings.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1755564945355" />
             </ScannedPath>
           </value>
         </entry>
@@ -83,7 +109,7 @@
         <entry key="file://$PROJECT_DIR$/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1754961705232" />
+              <option name="lastModified" value="1755611491343" />
             </ScannedPath>
           </value>
         </entry>
@@ -91,10 +117,11 @@
     </option>
     <option name="tableStructMapping">
       <map>
+        <entry key="list_node" value="ListNode" />
         <entry key="person" value="Person" />
         <entry key="tree_node" value="TreeNode" />
       </map>
     </option>
-    <option name="lastTimeChecked" value="1755326732784" />
+    <option name="lastTimeChecked" value="1755652979843" />
   </component>
 </project>

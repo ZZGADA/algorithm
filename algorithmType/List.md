@@ -149,4 +149,129 @@ class Solution {
 }
 
 ```
+--- 
+3. 反转链表 [反转链表](https://leetcode.cn/problems/UHnkqh/)
+```go
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
+//  反转链表
+func reverseList(head *ListNode) *ListNode {
+	var pre *ListNode
+	node := head
+
+	for node != nil {
+		next := node.Next
+		node.Next = pre
+		pre = node
+		node = next
+	}
+	return pre
+}
+
+
+```
+
+
+--- 
+4. LRU 缓存 [LRU 缓存](https://leetcode.cn/problems/lru-cache/)
+```go
+type LRUCache struct {
+	size       int
+	capacity   int
+	cache      map[int]*DLinkedNode
+	head, tail *DLinkedNode
+}
+
+type DLinkedNode struct {
+	key, value int
+	prev, next *DLinkedNode
+}
+
+func initDLinkedNode(key, value int) *DLinkedNode {
+	return &DLinkedNode{
+		key:   key,
+		value: value,
+        prev: nil,
+        next: nil,
+	}
+}
+
+// 构建一个双向链表
+func Constructor(capacity int) LRUCache {
+	l := LRUCache{
+		cache:    make(map[int]*DLinkedNode),
+		head:     initDLinkedNode(0, 0),
+		tail:     initDLinkedNode(0, 0),
+		capacity: capacity,
+	}
+	l.head.next = l.tail
+	l.tail.prev = l.head
+    return l
+}
+
+func (this *LRUCache) Get(key int) int {
+	if _, ok := this.cache[key]; !ok {
+		return -1
+	}
+
+	// 提取出cache node 节点
+	node := this.cache[key]
+	this.moveToHead(node)
+	return node.value
+}
+
+func (this *LRUCache) moveToHead(node *DLinkedNode) {
+	// free node
+	this.removeNode(node)
+	this.addToHead(node)
+}
+
+// 将节点移动到头位置
+func (this *LRUCache) addToHead(node *DLinkedNode) {
+	this.head.next.prev = node
+	node.next = this.head.next
+	node.prev = this.head
+	this.head.next = node
+}
+
+// 需要将节点移除掉
+func (this *LRUCache) removeNode(node *DLinkedNode) {
+	node.prev.next = node.next
+	node.next.prev = node.prev
+}
+
+// 移除最后一个元素
+func (this *LRUCache) removeTail() *DLinkedNode{
+    node := this.tail.prev
+    this.removeNode(node)
+    return node
+}
+
+func (this *LRUCache) Put(key int, value int) {
+	if _, ok := this.cache[key];!ok{
+        node := initDLinkedNode(key,value)
+        this.cache[key] = node
+        this.addToHead(node)
+        this.size++
+        if this.size > this.capacity{
+            removed :=this.removeTail()
+            delete(this.cache,removed.key)
+            this.size--
+        }
+
+        // 否则放行
+    }else{
+        // 如果存在 移动到头节点
+        node := this.cache[key]
+        node.value = value
+        this.moveToHead(node)
+    }
+
+}
+
+```
+
 
