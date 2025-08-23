@@ -339,3 +339,39 @@ func simplifyPath(path string) string {
     return "/" + strings.Join(stk, "/")
 }
 ```
+
+
+8. [连续数组](https://leetcode.cn/problems/A1NYOS/description/) 
+```go
+func findMaxLength(nums []int) int {
+	// 问题转换 求最长的连续子数组，其元素和为 0
+	// 前缀和问题
+	m := make(map[int]int)
+	sum := 0
+	res := 0
+	m[0] = -1
+
+	for i, v := range nums {
+		if v == 0 {
+			v = -1
+			nums[i] = v
+		}
+
+		// 计算当前前缀和
+		sum += v
+		if pFlag, ok := m[sum]; ok {
+			// 如果存在
+			res = max(res, i-pFlag)
+		} else {
+			// 将前缀和元素 放入map
+			// 如果当前前缀和元素重复，那么就记录早出现的
+
+			m[sum] = i
+		}
+	}
+
+	return res
+}
+
+
+```
