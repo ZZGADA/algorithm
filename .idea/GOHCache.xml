@@ -28,6 +28,13 @@
     </option>
     <option name="scannedPathMapping">
       <map>
+        <entry key="file://$PROJECT_DIR$/algorithm_go/array.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1755918138117" />
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/algorithm_go/dynamic_programming.go">
           <value>
             <ScannedPath>
@@ -109,7 +116,7 @@
         <entry key="file://$PROJECT_DIR$/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1755611491343" />
+              <option name="lastModified" value="1755917874773" />
             </ScannedPath>
           </value>
         </entry>
@@ -122,6 +129,6 @@
         <entry key="tree_node" value="TreeNode" />
       </map>
     </option>
-    <option name="lastTimeChecked" value="1755652979843" />
+    <option name="lastTimeChecked" value="1755915612246" />
   </component>
 </project>
