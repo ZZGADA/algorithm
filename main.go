@@ -4,15 +4,10 @@ import (
 	"strings"
 )
 
-import (
-	"bufio"
-	"os"
-)
-
 func main() {
-	reader := bufio.NewReader(os.Stdin)
-	readString, _ := reader.ReadString('\n')
-	readString = readString[:len(readString)-1]
+	//reader := bufio.NewReader(os.Stdin)
+	//readString, _ := reader.ReadString('\n')
+	//readString = readString[:len(readString)-1]
 
 }
 

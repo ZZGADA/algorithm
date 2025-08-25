@@ -1,6 +1,6 @@
 package algorithm_go
 
-import "fmt"
+import "strings"
 
 func longestPalindrome(s string) string {
 	// 中心扩展
@@ -35,4 +35,23 @@ func longestPalindrome(s string) string {
 	}
 	return res
 
+}
+
+func reverseWords(s string) string {
+	sl := strings.Split(s, " ")
+
+	sb := new(strings.Builder)
+	// strings.TrimSpace() 会去除字符串前后的所有空白字符（包括空格、制表符、换行符等）
+	for i := len(sl) - 1; i >= 0; i-- {
+		if strings.TrimSpace(sl[i]) != "" {
+			sb.WriteString(sl[i])
+			sb.WriteString(" ")
+		}
+	}
+	res := sb.String()
+
+	if len(res) == 0 {
+		return res
+	}
+	return res[:len(res)-1]
 }

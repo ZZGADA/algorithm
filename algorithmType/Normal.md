@@ -549,3 +549,32 @@ return res
 
 
 ```
+
+---- 
+
+10. [反转字符串中的单词](https://leetcode.cn/problems/reverse-words-in-a-string/?envType=study-plan-v2&envId=top-interview-150)
+```go
+import "strings"
+
+func reverseWords(s string) string {
+	sl := strings.Split(s, " ")
+
+	sb := new(strings.Builder)
+	// strings.TrimSpace() 会去除字符串前后的所有空白字符（包括空格、制表符、换行符等）
+	for i := len(sl) - 1; i >= 0; i-- {
+		if strings.TrimSpace(sl[i]) != "" {
+			sb.WriteString(sl[i])
+			sb.WriteString(" ")
+		}
+	}
+	res := sb.String()
+
+	if len(res) == 0 {
+		return res
+	}
+	return res[:len(res)-1]
+}
+
+
+
+```
