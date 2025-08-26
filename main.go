@@ -8,6 +8,7 @@ func main() {
 	//reader := bufio.NewReader(os.Stdin)
 	//readString, _ := reader.ReadString('\n')
 	//readString = readString[:len(readString)-1]
+	//nums := []int{1, 2, 3, 4, 5, 6}
 
 }
 

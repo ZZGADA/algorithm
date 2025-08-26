@@ -282,3 +282,32 @@ class Solution {
 
 
 ```
+
+--- 
+
+7. [长度最小的字数组](https://leetcode.cn/problems/minimum-size-subarray-sum/?envType=study-plan-v2&envId=top-interview-150)
+```go
+func minSubArrayLen(target int, nums []int) int {
+n := len(nums)
+res, left, sum := n+1, 0, 0
+
+for right, num := range nums {
+sum += num
+if sum >= target {
+res = min(res, right-left+1)
+}
+
+for sum-nums[left] >= target && left < right {
+sum -= nums[left]
+left++
+res = min(res, right-left+1)
+}
+}
+
+if res == n+1 {
+return 0
+}
+return res
+} 
+
+```

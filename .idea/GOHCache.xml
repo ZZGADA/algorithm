@@ -3,13 +3,6 @@
   <component name="GoORMHelperCache">
     <option name="schemaMapping">
       <map>
-        <entry key="Config">
-          <value>
-            <set>
-              <option value="file://$USER_HOME$/GolandProjects/class-svc/internal/dao/db.go" />
-            </set>
-          </value>
-        </entry>
         <entry key="ListNode">
           <value>
             <set>
@@ -31,100 +24,10 @@
             </set>
           </value>
         </entry>
-        <entry key="config">
-          <value>
-            <set>
-              <option value="file://$USER_HOME$/GolandProjects/class-svc/internal/server/http/server.go" />
-            </set>
-          </value>
-        </entry>
-        <entry key="jsonBody">
-          <value>
-            <set>
-              <option value="file://$USER_HOME$/GolandProjects/class-svc/internal/server/http/server.go" />
-            </set>
-          </value>
-        </entry>
-        <entry key="jsonError">
-          <value>
-            <set>
-              <option value="file://$USER_HOME$/GolandProjects/class-svc/internal/server/http/server.go" />
-            </set>
-          </value>
-        </entry>
-        <entry key="metaData">
-          <value>
-            <set>
-              <option value="file://$USER_HOME$/GolandProjects/class-svc/internal/server/http/server.go" />
-            </set>
-          </value>
-        </entry>
       </map>
     </option>
     <option name="scannedPathMapping">
       <map>
-        <entry key="file://$USER_HOME$/GolandProjects/class-svc/cmd/main.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1756004548159" />
-            </ScannedPath>
-          </value>
-        </entry>
-        <entry key="file://$USER_HOME$/GolandProjects/class-svc/internal/dao/db.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1756007696420" />
-              <option name="schema">
-                <list>
-                  <option value="Config" />
-                </list>
-              </option>
-            </ScannedPath>
-          </value>
-        </entry>
-        <entry key="file://$USER_HOME$/GolandProjects/class-svc/internal/dao/mongo.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1756007555948" />
-            </ScannedPath>
-          </value>
-        </entry>
-        <entry key="file://$USER_HOME$/GolandProjects/class-svc/internal/server/http/pprof.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1756004194705" />
-            </ScannedPath>
-          </value>
-        </entry>
-        <entry key="file://$USER_HOME$/GolandProjects/class-svc/internal/server/http/prometheus.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1756014043033" />
-            </ScannedPath>
-          </value>
-        </entry>
-        <entry key="file://$USER_HOME$/GolandProjects/class-svc/internal/server/http/server.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1756004194680" />
-              <option name="schema">
-                <list>
-                  <option value="metaData" />
-                  <option value="jsonBody" />
-                  <option value="jsonError" />
-                  <option value="config" />
-                </list>
-              </option>
-            </ScannedPath>
-          </value>
-        </entry>
-        <entry key="file://$USER_HOME$/GolandProjects/design-pattern/go/prometheus/main.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1756014835660" />
-            </ScannedPath>
-          </value>
-        </entry>
         <entry key="file://$PROJECT_DIR$/algorithm_go/array.go">
           <value>
             <ScannedPath>
@@ -173,7 +76,7 @@
         <entry key="file://$PROJECT_DIR$/algorithm_go/strings.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1755564945355" />
+              <option name="lastModified" value="1756081939675" />
             </ScannedPath>
           </value>
         </entry>
@@ -213,7 +116,7 @@
         <entry key="file://$PROJECT_DIR$/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1755999392143" />
+              <option name="lastModified" value="1756083538465" />
             </ScannedPath>
           </value>
         </entry>
@@ -221,15 +124,11 @@
     </option>
     <option name="tableStructMapping">
       <map>
-        <entry key="config" value="Config" />
-        <entry key="json_body" value="jsonBody" />
-        <entry key="json_error" value="jsonError" />
         <entry key="list_node" value="ListNode" />
-        <entry key="meta_data" value="metaData" />
         <entry key="person" value="Person" />
         <entry key="tree_node" value="TreeNode" />
       </map>
     </option>
-    <option name="lastTimeChecked" value="1755915612246" />
+    <option name="lastTimeChecked" value="1756081891360" />
   </component>
 </project>
