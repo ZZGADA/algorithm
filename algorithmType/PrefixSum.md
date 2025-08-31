@@ -375,3 +375,45 @@ func findMaxLength(nums []int) int {
 
 
 ```
+
+--- 
+
+9. [最长公共前缀](https://leetcode.cn/problems/longest-common-prefix/description/?envType=study-plan-v2&envId=top-interview-150)
+```go
+import (
+	"fmt"
+	"sort"
+)
+
+func longestCommonPrefix(strs []string) string {
+	prefix := ""
+	if len(strs) == 0 {
+		return prefix
+	}
+
+	sort.Slice(strs, func(i, j int) bool {
+		return len(strs[i]) < len(strs[j])
+	})
+
+	prefix = strs[0]
+
+	for _, s := range strs {
+		// 提前终止
+		if prefix == "" {
+			break
+		}
+        
+		i := 0
+		// 比对截至目前为止的最长公共前缀
+		for ; i < len(prefix); i++ {
+			if prefix[i] != s[i] {
+				break
+			}
+		}
+		prefix = prefix[:i]
+	}
+
+	return prefix
+
+}
+```
