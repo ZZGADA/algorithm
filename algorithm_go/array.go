@@ -34,3 +34,21 @@ func merge(intervals [][]int) [][]int {
 
 	return res
 }
+
+func removeElement(nums []int, val int) int {
+	left, right := 0, len(nums)-1
+	cnt := 0
+
+	for left <= right {
+		if nums[left] == val {
+			// swap
+			nums[left], nums[right] = nums[right], nums[left]
+			right--
+			cnt++
+		} else {
+			left++
+		}
+	}
+
+	return len(nums) - cnt
+}

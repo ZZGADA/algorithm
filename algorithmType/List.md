@@ -274,4 +274,30 @@ func (this *LRUCache) Put(key int, value int) {
 
 ```
 
+--- 
+
+5. [移除元素](https://leetcode.cn/problems/remove-element/?envType=study-plan-v2&envId=top-interview-150)
+```go 
+func removeElement(nums []int, val int) int {
+left, right := 0, len(nums)-1
+cnt := 0
+
+for left <= right {
+if nums[left] == val {
+// swap
+nums[left], nums[right] = nums[right], nums[left]
+right--
+cnt++
+} else {
+left++
+}
+}
+
+return len(nums) - cnt
+}
+
+
+
+```
+
 

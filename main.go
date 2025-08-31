@@ -5,10 +5,31 @@ import (
 )
 
 func main() {
-	//reader := bufio.NewReader(os.Stdin)
-	//readString, _ := reader.ReadString('\n')
-	//readString = readString[:len(readString)-1]
-	//nums := []int{1, 2, 3, 4, 5, 6}
+
+	s := "pwwkew"
+
+	// 记录区间出现的字符串
+	rem := make(map[rune]bool)
+	left := 0
+	res := 0
+
+	for _, rv := range s {
+
+		if rem[rv] {
+			// 字符串元素存在
+			// 需要缩小滑动窗口
+			for !rem[rune(s[left])] {
+				delete(rem, rune(s[left]))
+				left++
+			}
+			left++
+		} else {
+			// 否则增大
+			rem[rv] = true
+		}
+
+		res = max(res, len(rem))
+	}
 
 }
 

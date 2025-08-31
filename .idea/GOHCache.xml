@@ -57,7 +57,7 @@
         <entry key="file://$PROJECT_DIR$/algorithm_go/list.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1755653070309" />
+              <option name="lastModified" value="1756516821079" />
               <option name="schema">
                 <list>
                   <option value="ListNode" />
@@ -116,7 +116,7 @@
         <entry key="file://$PROJECT_DIR$/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1756083538465" />
+              <option name="lastModified" value="1756518159117" />
             </ScannedPath>
           </value>
         </entry>
@@ -129,6 +129,6 @@
         <entry key="tree_node" value="TreeNode" />
       </map>
     </option>
-    <option name="lastTimeChecked" value="1756081891360" />
+    <option name="lastTimeChecked" value="1756515900472" />
   </component>
 </project>
