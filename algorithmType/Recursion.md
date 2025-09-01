@@ -128,3 +128,42 @@ func combinationSum3(candidates []int, target int) [][]int {
 	return res
 }
 ```
+
+3. [全排列](https://leetcode.cn/problems/permutations/?envType=study-plan-v2&envId=top-interview-150)
+```go
+func permute(nums []int) [][]int {
+	size := len(nums)
+	res := make([][]int, 0)
+
+	isUsed := make([]int, size) // 0 没有用 1 用了
+
+	var dfs func(arr []int,depth int)
+	dfs = func(arr []int, depth int) {
+		if depth >= size {
+			res = append(res, append([]int(nil), arr...))
+			return
+		}
+
+		for i, v := range isUsed {
+			if v == 0 {
+				// 没有使用
+				arr = append(arr, nums[i])
+				isUsed[i] = 1
+				dfs(arr, depth+1)
+
+                // 回溯
+				isUsed[i] = 0
+				arr = arr[:len(arr)-1]
+			}
+		}
+	}
+	dfs([]int{}, 0)
+
+	return res
+}
+
+
+```
+
+
+

@@ -578,3 +578,32 @@ func reverseWords(s string) string {
 
 
 ```
+
+--- 
+11. [最长连续序列](https://leetcode.cn/problems/longest-consecutive-sequence/description/?envType=study-plan-v2&envId=top-interview-150)
+```go
+func longestConsecutive(nums []int) int {
+	m := make(map[int]bool)
+	res := 0
+	for _, v := range nums {
+		m[v] = true
+	}
+
+	for v := range m {
+		find := v - 1
+		if m[find] {
+			// 如果 v 不是当前起点的话 就跳过
+			continue
+
+		}
+		y := v + 1
+		for m[y] {
+			y++
+		}
+		res = max(y-v, res)
+	}
+	return res
+}
+
+
+```
